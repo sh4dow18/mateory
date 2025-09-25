@@ -55,7 +55,7 @@ jobs:
     # Means that the job needs the Build Job first
     needs: build
     # Set that this is just for develop branch
-    if: github.ref_name == "develop"
+    if: github.ref_name == develop
     # Virtual Machine Operative System to run the Preview Deploys Job
     runs-on: ubuntu-latest
     # Preview Deploys Job Steps
@@ -79,7 +79,7 @@ jobs:
     # Means that the job needs the Build Job first
     needs: build
     # Set that this is just for main branch
-    if: github.ref_name == 'main'
+    if: github.ref_name == main
     # Virtual Machine Operative System to run the Production Deploys Job
     runs-on: ubuntu-latest
     # Preview Deploys Job Steps
