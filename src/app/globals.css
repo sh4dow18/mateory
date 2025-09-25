@@ -1,2 +1,11 @@
 /* Tailwind CSS Imports */
 @import "tailwindcss";
+/* Tailwind CSS Theme Config */
+@theme {
+  --font-inter: inter;
+}
+/* Add Inter Font to use with Tailwind CSS */
+@font-face {
+  font-family: "inter";
+  src: url(/fonts/Inter.ttf) format("truetype");
+}
