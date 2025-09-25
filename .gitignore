@@ -1,0 +1,14 @@
+# Dependencies
+/node_modules/
+# Next.js
+/.next/
+/build/
+package-lock.json
+# env files
+.env*
+# Typescript
+*.tsbuildinfo
+next-env.d.ts
+# SonarQube
+.scannerwork
+.sonarqube

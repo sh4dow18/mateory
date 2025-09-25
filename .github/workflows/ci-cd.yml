@@ -1,0 +1,98 @@
+# Workflow Name
+name: CI/CD
+# Workflow Triggers
+on:
+  # If there is a push in main, develop or a feature branch, start the workflow
+  push:
+    branches:
+      - main
+      - develop
+      - "feature/**"
+  # If there is a pull request in main or develop, start the workflow
+  pull_request:
+    branches:
+      - main
+      - develop
+# Workflow Jobs
+jobs:
+  # When is a build
+  build:
+    # Build Job Name
+    name: Build Job
+    # Virtual Machine Operative System to run the Build Job
+    runs-on: ubuntu-latest
+    # Set the strategy to execute the build job with the necessary information
+    strategy:
+      matrix:
+        node-version: [22.x]
+    # Build Job Steps
+    steps:
+      # 1- Clone Repo in VM
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      # 2️- Setup Node in VM with the Node Version set in Strategy
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+      # 3️- Install Dependencies
+      - name: Install dependencies
+        run: npm install
+      # 4- Check Lint
+      - name: Check Link
+        run: npm run lint
+      # 5- Run Tests
+      - name: Run tests
+        run: npm run test
+      # 6- Build Project
+      - name: Build project
+        run: npm run build
+  # When is a Preview deploy
+  deploy-preview:
+    # Preview Deploy Name
+    name: Deploy Preview to Vercel
+    # Means that the job needs the Build Job first
+    needs: build
+    # Set that this is just for develop branch
+    if: github.ref_name == "develop"
+    # Virtual Machine Operative System to run the Preview Deploys Job
+    runs-on: ubuntu-latest
+    # Preview Deploys Job Steps
+    steps:
+      # 1- Clone Repo in VM
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      # 2- Deploy Repo as Preview to Vercel
+      - name: Deploy Preview
+        uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          working-directory: .
+          prod: false
+  # When is a Production deploy
+  deploy-production:
+    # Production Deploy Name
+    name: Deploy Production to Vercel
+    # Means that the job needs the Build Job first
+    needs: build
+    # Set that this is just for main branch
+    if: github.ref_name == 'main'
+    # Virtual Machine Operative System to run the Production Deploys Job
+    runs-on: ubuntu-latest
+    # Preview Deploys Job Steps
+    steps:
+      # 1- Clone Repo in VM
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      # 2- Deploy Repo as Production to Vercel
+      - name: Deploy Production
+        uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          working-directory: .
+          prod: true
