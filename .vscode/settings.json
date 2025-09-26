@@ -10,7 +10,7 @@
   "autoBarrel.files.keepExtensionOnExport": false,
   "autoBarrel.files.detectExportsInFiles": true,
   "autoBarrel.files.useNamedExports": true,
-  "autoBarrel.files.exportDefaultFilename": "filename",
+  "autoBarrel.files.exportDefaultFilename": "pascalCase",
   "autoBarrel.files.configuredDefaultFilename": "index",
   "autoBarrel.formatting.headerCommentTemplate": [],
   "autoBarrel.formatting.excludeSemiColonAtEndOfLine": false,
