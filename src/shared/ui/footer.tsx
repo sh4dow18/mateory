@@ -20,7 +20,7 @@ function Footer() {
   ];
   // Return Footer Component
   return (
-    <footer className="bg-gray-900 px-10 py-10 flex flex-col gap-7 border-t border-gray-400/50 md:flex-row md:place-content-between">
+    <footer className="bg-gray-900 px-10 py-7 flex flex-col gap-7 border-t border-gray-400/50 md:flex-row md:place-content-between">
       {/* Footer Logos Container */}
       <div className="flex gap-7 justify-center md:order-2">
         {/* Display all Footer Logos List Links */}
