@@ -1,7 +1,7 @@
 // Main Layout Stylesheets
 import "@/app/globals.css";
 // Main Layout Requirements
-import { Footer } from "@/shared/ui";
+import { Footer, Header } from "@/shared/ui";
 // Main Layout Main Function
 export default function RootLayout({
   children,
@@ -12,6 +12,7 @@ export default function RootLayout({
   return (
     <html lang="es" className="bg-gray-950 font-inter">
       <body className="flex flex-col min-h-screen">
+        <Header />
         <main className="flex-1">{children}</main>
         <Footer />
       </body>
