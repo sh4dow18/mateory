@@ -10,6 +10,8 @@ import {
   GetMaxDeficit,
   GetMaxInventoryLevel,
   GetOptimalProductionLotSize,
+  GetReasonForLengthOfCycle,
+  GetReorderPoint,
   GetSecondTimeInterval,
   GetThirdTimeInterval,
   GetTimeBetweenTwoProductionRuns,
@@ -37,6 +39,8 @@ function Inventory() {
     totalProductionCost: "0",
     totalProductionUnitCost: "0",
     totalCost: "0",
+    reasonForLengthOfCycle: 0,
+    reorderPoint: 0,
   };
   const MODELS_LIST = [
     { id: 1, name: "EPQ sin Déficit" },
@@ -69,6 +73,7 @@ function Inventory() {
     const UNIT_PRODUCTION_COST = GetValueFromString(
       FORM.unitProductionCost.value
     );
+    const REPLENISHMENT_TIME = GetValueFromString(FORM.replenishmentTime.value);
     const DECIMALS = GetValueFromString(FORM.decimals.value);
     const CURRENCY = FORM.currency.value;
     // Calculate all results
@@ -81,16 +86,16 @@ function Inventory() {
       DEFICIT_COST,
       DECIMALS
     );
-    const TIME_BETWEEN_TWO_PRODUCTION_RUNS = GetTimeBetweenTwoProductionRuns(
-      OPTIMAL_PRODUCTION_LOT_SIZE,
-      DEMAND,
-      DECIMALS
-    );
     const FREQUENCY_BETWEEN_TWO_PRODUCTION_RUNS =
       GetFrequencyBetweenTwoProductionRuns(
-        TIME_BETWEEN_TWO_PRODUCTION_RUNS,
+        OPTIMAL_PRODUCTION_LOT_SIZE,
+        DEMAND,
         DECIMALS
       );
+    const TIME_BETWEEN_TWO_PRODUCTION_RUNS = GetTimeBetweenTwoProductionRuns(
+      FREQUENCY_BETWEEN_TWO_PRODUCTION_RUNS,
+      DECIMALS
+    );
     const MAX_DEFICIT = GetMaxDeficit(
       selectedModel,
       DEMAND,
@@ -168,6 +173,18 @@ function Inventory() {
       UNIT_PRODUCTION_COST,
       DECIMALS
     );
+    const REASON_FOR_LENGTH_OF_CICLE = GetReasonForLengthOfCycle(
+      REPLENISHMENT_TIME,
+      FREQUENCY_BETWEEN_TWO_PRODUCTION_RUNS
+    );
+    const REORDER_POINT = GetReorderPoint(
+      REPLENISHMENT_TIME,
+      REASON_FOR_LENGTH_OF_CICLE,
+      FREQUENCY_BETWEEN_TWO_PRODUCTION_RUNS,
+      DEMAND,
+      OPTIMAL_PRODUCTION_LOT_SIZE,
+      DECIMALS
+    );
     SetResults({
       optimalProductionLotSize: OPTIMAL_PRODUCTION_LOT_SIZE,
       timeBetweenTwoProductionRuns: TIME_BETWEEN_TWO_PRODUCTION_RUNS,
@@ -200,6 +217,8 @@ function Inventory() {
           TOTAL_PRODUCTION_COST +
           TOTAL_PRODUCTION_UNIT_COST
       ),
+      reasonForLengthOfCycle: REASON_FOR_LENGTH_OF_CICLE,
+      reorderPoint: REORDER_POINT,
     });
   };
   // Returns Inventory Page
@@ -258,7 +277,7 @@ function Inventory() {
             name="demand"
             placeholder="3000"
             help="Números Positivos Solamente"
-            validation="number"
+            validation="numberWithZero"
           />
           {/* Unit Production Cost */}
           <Input
@@ -266,7 +285,7 @@ function Inventory() {
             name="unitProductionCost"
             placeholder="4"
             help="Números Positivos Solamente"
-            validation="number"
+            validation="numberWithZero"
           />
           {/* Inventory Cost */}
           <Input
@@ -274,7 +293,7 @@ function Inventory() {
             name="inventoryCost"
             placeholder="3"
             help="Números Positivos Solamente"
-            validation="number"
+            validation="numberWithZero"
           />
           {/* Release Cost */}
           <Input
@@ -282,7 +301,7 @@ function Inventory() {
             name="releaseCost"
             placeholder="100"
             help="Números Positivos Solamente"
-            validation="number"
+            validation="numberWithZero"
           />
           {/* Deficit Cost */}
           <Input
@@ -290,8 +309,17 @@ function Inventory() {
             name="deficitCost"
             placeholder="2"
             help="Números Positivos Solamente"
-            validation="number"
+            validation="numberWithZero"
             disabled={selectedModel === 1 || selectedModel === 3}
+          />
+          {/* Deficit Cost */}
+          <Input
+            label="Tiempo de Reabastecimiento"
+            name="replenishmentTime"
+            placeholder="2"
+            help="Números Positivos Solamente"
+            validation="numberWithZero"
+            disabled={selectedModel !== 3}
           />
         </Section>
         {/* Settings Form Section */}
@@ -395,6 +423,18 @@ function Inventory() {
         />
         {/* Total Cost Card */}
         <Card name="Costo Total" value={results.totalCost} />
+        {/* Total Deficit Cost Card */}
+        <Card
+          name="Razón de Longitud del tiempo del ciclo"
+          value={results.reasonForLengthOfCycle}
+          disabled={selectedModel !== 3}
+        />
+        {/* Total Deficit Cost Card */}
+        <Card
+          name="Punto de Reorden"
+          value={results.reorderPoint}
+          disabled={selectedModel !== 3}
+        />
       </Section>
     </Section>
   );

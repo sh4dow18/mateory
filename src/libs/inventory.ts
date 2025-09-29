@@ -26,18 +26,23 @@ export function GetOptimalProductionLotSize(
 }
 // Get Time Between Two Production Runs function
 export function GetTimeBetweenTwoProductionRuns(
+  // optimalProductionLotSize: number,
+  // demand: number,
+  frequencyBetweenTwoProductionRuns: number,
+  decimals: number
+) {
+  // return FixResult(optimalProductionLotSize / demand, decimals);
+  return FixResult(1 / frequencyBetweenTwoProductionRuns, decimals);
+}
+// Get Frequency Between Two Production Runs
+export function GetFrequencyBetweenTwoProductionRuns(
+  // timeBetweenTwoProductionRuns: number,
   optimalProductionLotSize: number,
   demand: number,
   decimals: number
 ) {
+  // return FixResult(1 / timeBetweenTwoProductionRuns, decimals);
   return FixResult(optimalProductionLotSize / demand, decimals);
-}
-// Get Frequency Between Two Production Runs
-export function GetFrequencyBetweenTwoProductionRuns(
-  timeBetweenTwoProductionRuns: number,
-  decimals: number
-) {
-  return FixResult(1 / timeBetweenTwoProductionRuns, decimals);
 }
 // Get Maximum Deficit
 export function GetMaxDeficit(
@@ -209,4 +214,30 @@ export function GetTotalProductionUnitCost(
   decimals: number
 ) {
   return FixResult(demand * unitProductionCost, decimals);
+}
+// Get Reason fot Length of Cicle (n)
+export function GetReasonForLengthOfCycle(
+  replenishmentTime: number,
+  frequencyBetweenTwoProductionRuns: number
+) {
+  return FixResult(replenishmentTime / frequencyBetweenTwoProductionRuns, 0);
+}
+// Get Reorder Point (Pr)
+export function GetReorderPoint(
+  replenishmentTime: number,
+  reasonForLengthOfCycle: number,
+  frequencyBetweenTwoProductionRuns: number,
+  demand: number,
+  optimalProductionLotSize: number,
+  decimals: number
+) {
+  let result = replenishmentTime * demand;
+  if (replenishmentTime === frequencyBetweenTwoProductionRuns) {
+    result = optimalProductionLotSize;
+  } else if (replenishmentTime > frequencyBetweenTwoProductionRuns) {
+    const FIRST_PART = replenishmentTime * demand;
+    const SECOND_PART = reasonForLengthOfCycle * optimalProductionLotSize;
+    result = FIRST_PART - SECOND_PART;
+  }
+  return FixResult(result, decimals);
 }
