@@ -1,4 +1,5 @@
 // Vitest Config Requirements
+import path from "path";
 import { defineConfig } from "vitest/config";
 // Vitest Config Main Function
 export default defineConfig({
@@ -9,5 +10,10 @@ export default defineConfig({
     environment: "jsdom",
     // File that runs before each test suite, for loading global configurations, mocks or extensions
     setupFiles: "./tests/setup.ts",
+  },
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "src"),
+    },
   },
 });

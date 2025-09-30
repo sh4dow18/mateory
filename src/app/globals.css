@@ -3,6 +3,8 @@
 /* Tailwind CSS Theme Config */
 @theme {
   --font-inter: inter;
+  --color-primary: #a72dbc;
+  --color-primary-light: #a54ab5;
 }
 /* Add Inter Font to use with Tailwind CSS */
 @font-face {

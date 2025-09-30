@@ -1,7 +1,7 @@
 // Header Requirements
+import { DrawerNav } from "@/widgets/navigation/ui";
 import MateoryLogo from "./mateory-logo";
 import Link from "next/link";
-import { CiMenuBurger } from "react-icons/ci";
 import { MdAccessible } from "react-icons/md";
 // Header Main Function
 function Header() {
@@ -11,7 +11,7 @@ function Header() {
       {/* Header Main Header */}
       <div className="flex">
         {/* Drawer Menu */}
-        <CiMenuBurger className="w-7 h-7 fill-gray-50 hover:cursor-pointer lg:hidden" />
+        <DrawerNav />
         {/* Mateory Logo */}
         <Link href="/" title="Inicio" className="ml-5">
           <MateoryLogo width={160} height={28} className="w-40 h-7" />

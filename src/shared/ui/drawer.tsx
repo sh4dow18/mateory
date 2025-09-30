@@ -1,0 +1,61 @@
+// Drawer Requirements
+import { IconType } from "react-icons";
+import MateoryLogo from "./mateory-logo";
+import { FaXmark } from "react-icons/fa6";
+import React from "react";
+import { useDrawer } from "../model";
+// Drawer Props
+interface Props {
+  readonly MenuIcon: IconType;
+  readonly children: React.ReactNode;
+  readonly side?: "left" | "right";
+  readonly inMobileOnly?: boolean;
+  readonly isNav?: boolean;
+}
+// Drawer Main Function
+function Drawer({ MenuIcon, children, side, inMobileOnly, isNav }: Props) {
+  // Drawer Hooks
+  const { open, toggle, close, enhancedChildren } = useDrawer(children);
+  // Drawer Constants
+  const POSITION_CLASS = side === "left" ? "right-0" : "left-0";
+  const OPEN_CLASS = side === "left" ? "-translate-x-0" : "translate-x-0";
+  const CLOSED_CLASS = side === "left" ? "translate-x-full" : "-translate-x-full";
+  // Drawer Constant Wrapper
+  const ScrollableContent = isNav === true ? "nav" : "div";
+  // Return Drawer Component
+  return (
+    <>
+      {/* Drawer Button */}
+      <MenuIcon
+        onClick={toggle}
+        className={`w-7 h-7 text-gray-50 ${inMobileOnly === true ? "lg:hidden" : ""}`.trimEnd()}
+      />
+      {/* Drawer Overlay */}
+      {open && (
+        <button
+          className="fixed inset-0 bg-black/40 z-40 lg:hidden"
+          onClick={close}
+          aria-label="Close drawer"
+        />
+      )}
+      {/* Drawer Menu */}
+      <div
+        className={`fixed top-0 ${POSITION_CLASS} h-full w-64 bg-gray-900 z-50 transform transition-transform duration-300 ease-in-out lg:hidden ${open ? OPEN_CLASS : CLOSED_CLASS}`}
+      >
+        {/* Drawer Menu Header */}
+        <div className="flex items-center justify-between px-4 py-5 border-b dark:border-gray-700">
+          {/* Drawer Menu Header Logo */}
+          <MateoryLogo width={160} height={28} className="w-40 h-7" />
+          {/* Drawer Menu Header X Mark to Close */}
+          <FaXmark onClick={close} className="text-white" />
+        </div>
+        {/* Drawer Menu Scrollable Content */}
+        <ScrollableContent className="overflow-y-auto h-[calc(100%-4rem)] p-4 space-y-3">
+          {enhancedChildren}
+        </ScrollableContent>
+      </div>
+    </>
+  );
+}
+
+export default Drawer;
