@@ -1,3 +1,5 @@
+// Set this component as a client component
+"use client";
 // Drawer Requirements
 import { IconType } from "react-icons";
 import MateoryLogo from "./mateory-logo";
@@ -26,10 +28,9 @@ function Drawer({ MenuIcon, children, side, inMobileOnly, isNav }: Props) {
   return (
     <>
       {/* Drawer Button */}
-      <MenuIcon
-        onClick={toggle}
-        className={`w-7 h-7 text-gray-50 ${inMobileOnly === true ? "lg:hidden" : ""}`.trimEnd()}
-      />
+      <button onClick={toggle} className={inMobileOnly === true ? "lg:hidden" : ""}>
+        <MenuIcon className="w-7 h-7 text-gray-50" />
+      </button>
       {/* Drawer Overlay */}
       {open && (
         <button
@@ -46,8 +47,10 @@ function Drawer({ MenuIcon, children, side, inMobileOnly, isNav }: Props) {
         <div className="flex items-center justify-between px-4 py-5 border-b dark:border-gray-700">
           {/* Drawer Menu Header Logo */}
           <MateoryLogo width={160} height={28} className="w-40 h-7" />
-          {/* Drawer Menu Header X Mark to Close */}
-          <FaXmark onClick={close} className="text-white" />
+          {/* Drawer Menu Header X Mark Button to Close */}
+          <button onClick={close}>
+            <FaXmark className="text-white" />
+          </button>
         </div>
         {/* Drawer Menu Scrollable Content */}
         <ScrollableContent className="overflow-y-auto h-[calc(100%-4rem)] p-4 space-y-3">
