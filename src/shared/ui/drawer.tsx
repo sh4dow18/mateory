@@ -29,7 +29,7 @@ function Drawer({ MenuIcon, children, side, inMobileOnly, isNav }: Props) {
     <>
       {/* Drawer Button */}
       <button onClick={toggle} className={inMobileOnly === true ? "lg:hidden" : ""}>
-        <MenuIcon className="w-7 h-7 text-gray-50" />
+        <MenuIcon className="w-7 h-7 text-gray-50 hover:cursor-pointer" />
       </button>
       {/* Drawer Overlay */}
       {open && (
@@ -49,7 +49,7 @@ function Drawer({ MenuIcon, children, side, inMobileOnly, isNav }: Props) {
           <MateoryLogo width={160} height={28} className="w-40 h-7" />
           {/* Drawer Menu Header X Mark Button to Close */}
           <button onClick={close}>
-            <FaXmark className="text-white" />
+            <FaXmark className="text-white hover:cursor-pointer" />
           </button>
         </div>
         {/* Drawer Menu Scrollable Content */}
