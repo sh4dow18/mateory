@@ -45,8 +45,8 @@ describe("Drawer", () => {
     // Get Drawer Element
     const DRAWER = container.querySelector("div.fixed");
     // Check if have right classes when side is left
-    expect(DRAWER).toHaveClass("right-0");
-    expect(DRAWER).toHaveClass("translate-x-full");
+    expect(DRAWER).toHaveClass("left-0");
+    expect(DRAWER).toHaveClass("-translate-x-full");
   });
   // Test 4: Applies Correct Classes when side is Right
   it("applies correct classes when side='right'", () => {
@@ -59,7 +59,7 @@ describe("Drawer", () => {
     // Get Drawer Element
     const DRAWER = container.querySelector("div.fixed");
     // Check if have right classes when side is left
-    expect(DRAWER).toHaveClass("left-0");
-    expect(DRAWER).toHaveClass("-translate-x-full");
+    expect(DRAWER).toHaveClass("right-0");
+    expect(DRAWER).toHaveClass("translate-x-full");
   });
 });

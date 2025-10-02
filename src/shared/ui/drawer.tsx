@@ -19,9 +19,9 @@ function Drawer({ MenuIcon, children, side, inMobileOnly, isNav }: Props) {
   // Drawer Hooks
   const { open, toggle, close, enhancedChildren } = useDrawer(children);
   // Drawer Constants
-  const POSITION_CLASS = side === "left" ? "right-0" : "left-0";
-  const OPEN_CLASS = side === "left" ? "-translate-x-0" : "translate-x-0";
-  const CLOSED_CLASS = side === "left" ? "translate-x-full" : "-translate-x-full";
+  const POSITION_CLASS = side === "right" ? "right-0" : "left-0";
+  const OPEN_CLASS = side === "right" ? "-translate-x-0" : "translate-x-0";
+  const CLOSED_CLASS = side === "right" ? "translate-x-full" : "-translate-x-full";
   // Drawer Constant Wrapper
   const ScrollableContent = isNav === true ? "nav" : "div";
   // Return Drawer Component
