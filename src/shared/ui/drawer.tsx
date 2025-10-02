@@ -34,14 +34,14 @@ function Drawer({ MenuIcon, children, side, inMobileOnly, isNav }: Props) {
       {/* Drawer Overlay */}
       {open && (
         <button
-          className="fixed inset-0 bg-black/40 z-40 lg:hidden"
+          className={`fixed inset-0 bg-black/40 z-40 ${inMobileOnly === true ? "lg:hidden" : ""}`}
           onClick={close}
           aria-label="Close drawer"
         />
       )}
       {/* Drawer Menu */}
       <div
-        className={`fixed top-0 ${POSITION_CLASS} h-full w-64 bg-gray-900 z-50 transform transition-transform duration-300 ease-in-out lg:hidden ${open ? OPEN_CLASS : CLOSED_CLASS}`}
+        className={`fixed top-0 ${POSITION_CLASS} h-full w-64 bg-gray-900 z-50 transform transition-transform duration-300 ease-in-out ${open ? OPEN_CLASS : CLOSED_CLASS} ${inMobileOnly === true ? "lg:hidden" : ""}`.trimEnd()}
       >
         {/* Drawer Menu Header */}
         <div className="flex items-center justify-between px-4 py-5 border-b dark:border-gray-700">
