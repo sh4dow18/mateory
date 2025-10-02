@@ -2,7 +2,7 @@
 import { DrawerNav } from "@/widgets/navigation/ui";
 import MateoryLogo from "./mateory-logo";
 import Link from "next/link";
-import { MdAccessible } from "react-icons/md";
+import { AccessibilityMenu } from "@/widgets/accessibility/ui";
 // Header Main Function
 function Header() {
   // Return Header Component
@@ -18,7 +18,7 @@ function Header() {
         </Link>
       </div>
       {/* Accessibility menu */}
-      <MdAccessible className="w-7 h-7 fill-gray-50 mr-5 transition hover:cursor-pointer hover:scale-120" />
+      <AccessibilityMenu />
     </header>
   );
 }
