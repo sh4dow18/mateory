@@ -23,7 +23,7 @@ function SidebarNav() {
           className={`w-6 h-6 transition-transform duration-300 ${open ? "rotate-0" : "rotate-180"}`}
         />
         {/* Sidebar Nav Toggle button Text */}
-        {open && <span className="font-small:text-sm">Mostrar menos</span>}
+        {open && <span className="font-small:text-sm font-large:text-lg">Mostrar menos</span>}
       </button>
       {/* Sidebar Nav Links */}
       <nav className="flex flex-col mt-1 overflow-y-auto">
@@ -35,7 +35,7 @@ function SidebarNav() {
             title={!open ? route.label : undefined}
           >
             <route.Icon className="w-6 h-6" />
-            {open && <span className="font-small:text-sm">{route.label}</span>}
+            {open && <span className="font-small:text-sm font-large:text-lg">{route.label}</span>}
           </Link>
         ))}
       </nav>

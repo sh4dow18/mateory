@@ -37,7 +37,7 @@ function Footer() {
         ))}
       </div>
       {/* Copyright Paragraph */}
-      <p className="text-center text-gray-700 text-sm leading-6 dark:text-gray-400 high-contrast:fill-black md:order-1 font-small:text-xs">
+      <p className="text-center text-gray-700 text-sm leading-6 dark:text-gray-400 high-contrast:fill-black md:order-1 font-small:text-xs font-large:text-base">
         © 2025 Ramsés Solano. Casi todos los derechos reservados.
       </p>
     </footer>

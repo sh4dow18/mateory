@@ -18,7 +18,7 @@ function AccessibilityMenu() {
             className={`w-6 h-6 ${section.enabled ? "fill-black dark:fill-white" : "fill-gray-600 dark:fill-gray-400 high-contrast:fill-black"}`}
           />
           <span
-            className={`w-32 font-small:text-sm ${section.enabled ? "text-black font-semibold dark:text-white" : "text-gray-600 dark:text-gray-400 high-contrast:text-black"}`}
+            className={`w-32 font-small:text-sm font-large:text-lg ${section.enabled ? "text-black font-semibold dark:text-white" : "text-gray-600 dark:text-gray-400 high-contrast:text-black"}`}
           >
             {section.label}
           </span>

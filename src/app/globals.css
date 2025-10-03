@@ -16,6 +16,7 @@
 @custom-variant high-contrast (&:where(.high-contrast, .high-contrast *));
 /* Custom Font Classes */
 @custom-variant font-small (&:where(.font-small, .font-small *));
+@custom-variant font-large (&:where(.font-large, .font-large *));
 /* Custom Scrollbar to Webkit (Chrome, Edge, Safari) */
 ::-webkit-scrollbar {
   width: 8px;
