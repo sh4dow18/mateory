@@ -3,6 +3,7 @@
 /* Tailwind CSS Theme Config */
 @theme {
   --font-inter: inter;
+  --font-dyslexia: dyslexia;
   --color-primary: #a72dbc;
   --color-primary-light: #a54ab5;
 }
@@ -10,6 +11,11 @@
 @font-face {
   font-family: "inter";
   src: url(/fonts/Inter.ttf) format("truetype");
+}
+/* Add Open Dyslexic Font to use with Tailwind CSS */
+@font-face {
+  font-family: "dyslexia";
+  src: url(/fonts/open-dyslexic.ttf) format("truetype");
 }
 /* Custom Themes Classes */
 @custom-variant dark (&:where(.dark, .dark *));
