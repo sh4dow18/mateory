@@ -1,6 +1,6 @@
 // Use Accessibility Test Suite Requirements
 import { renderHook, act } from "@testing-library/react";
-import useAccessibility from "./useAccessibility";
+import useAccessibility from "./use-accessibility";
 import { beforeEach, describe, expect, it } from "vitest";
 // Test Suite for Use Accessibility Hookk
 describe("useAccessibility", () => {

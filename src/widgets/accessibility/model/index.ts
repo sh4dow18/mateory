@@ -1,1 +1,1 @@
-export { default as useAccessibility } from "./useAccessibility";
+export { default as useAccessibility } from "./use-accessibility";
