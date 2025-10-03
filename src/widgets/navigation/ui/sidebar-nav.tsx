@@ -12,10 +12,10 @@ function SidebarNav() {
   const ROUTES_LIST = useRoutes();
   // Return Sidebar Nav Component
   return (
-    <aside className="hidden h-svh bg-gray-900 text-gray-300 flex-col shadow-lg transition-all duration-300 ease-in-out border-r border-gray-600/50 lg:flex">
+    <aside className="hidden h-svh bg-gray-50 text-gray-700 flex-col transition-all duration-300 ease-in-out border-r border-gray-400/50 lg:flex">
       {/* Sidebar Nav Toggle button */}
       <button
-        className="flex justify-center items-center gap-3 p-4 border-b border-gray-400/50 select-none hover:bg-gray-800 hover:cursor-pointer"
+        className="flex justify-center items-center gap-3 p-4 border-b border-gray-400/50 select-none hover:bg-gray-200 hover:cursor-pointer"
         onClick={toggle}
       >
         {/* Sidebar Nav Toggle button Icon */}
@@ -31,7 +31,7 @@ function SidebarNav() {
           <Link
             key={route.path}
             href={`/${route.path}`}
-            className={`flex items-center gap-3 px-4 py-3 ${route.isActive ? "bg-primary/50 text-white" : "text-gray-400 hover:bg-gray-800"}`}
+            className={`flex items-center gap-3 px-4 py-3 ${route.isActive ? "bg-primary text-white" : "text-gray-950 hover:bg-gray-200"}`}
             title={!open ? route.label : undefined}
           >
             <route.Icon className="w-6 h-6" />

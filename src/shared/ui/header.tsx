@@ -7,7 +7,7 @@ import { AccessibilityMenu } from "@/widgets/accessibility/ui";
 function Header() {
   // Return Header Component
   return (
-    <header className="bg-gray-900 px-4 py-5 flex items-center place-content-between border-b border-gray-400/50">
+    <header className="bg-gray-50 px-4 py-5 flex items-center place-content-between border-b border-gray-400/50">
       {/* Header Main Header */}
       <div className="flex">
         {/* Drawer Menu */}

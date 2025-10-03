@@ -29,7 +29,7 @@ function Drawer({ MenuIcon, children, side, inMobileOnly, isNav }: Props) {
     <>
       {/* Drawer Button */}
       <button onClick={toggle} className={inMobileOnly === true ? "lg:hidden" : ""}>
-        <MenuIcon className="w-7 h-7 text-gray-50 hover:cursor-pointer" />
+        <MenuIcon className="w-7 h-7 text-gray-700 hover:cursor-pointer" />
       </button>
       {/* Drawer Overlay */}
       {open && (
@@ -41,15 +41,15 @@ function Drawer({ MenuIcon, children, side, inMobileOnly, isNav }: Props) {
       )}
       {/* Drawer Menu */}
       <div
-        className={`fixed top-0 ${POSITION_CLASS} h-full w-64 bg-gray-900 z-50 transform transition-transform duration-300 ease-in-out ${open ? OPEN_CLASS : CLOSED_CLASS} ${inMobileOnly === true ? "lg:hidden" : ""}`.trimEnd()}
+        className={`fixed top-0 ${POSITION_CLASS} h-full w-64 bg-gray-50 z-50 transform transition-transform duration-300 ease-in-out ${open ? OPEN_CLASS : CLOSED_CLASS} ${inMobileOnly === true ? "lg:hidden" : ""}`.trimEnd()}
       >
         {/* Drawer Menu Header */}
-        <div className="flex items-center justify-between px-4 py-5 border-b dark:border-gray-700">
+        <div className="flex items-center justify-between px-4 py-5 border-b border-gray-400/70">
           {/* Drawer Menu Header Logo */}
           <MateoryLogo width={160} height={28} className="w-40 h-7" />
           {/* Drawer Menu Header X Mark Button to Close */}
           <button onClick={close}>
-            <FaXmark className="text-white hover:cursor-pointer" />
+            <FaXmark className="text-gray-700 hover:cursor-pointer" />
           </button>
         </div>
         {/* Drawer Menu Scrollable Content */}
