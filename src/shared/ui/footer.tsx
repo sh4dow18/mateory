@@ -20,7 +20,7 @@ function Footer() {
   ];
   // Return Footer Component
   return (
-    <footer className="bg-gray-50 px-10 py-7 flex flex-col gap-7 border-t border-gray-400/50 dark:bg-gray-950 md:flex-row md:place-content-between">
+    <footer className="bg-gray-50 px-10 py-7 flex flex-col gap-7 border-t border-gray-400/50 dark:bg-gray-950 high-contrast:bg-white md:flex-row md:place-content-between">
       {/* Footer Logos Container */}
       <div className="flex gap-7 justify-center md:order-2">
         {/* Display all Footer Logos List Links */}
@@ -32,12 +32,12 @@ function Footer() {
             rel="noopener noreferrer"
             title={logo.name}
           >
-            <logo.Icon className="w-6 h-6 fill-gray-700 transition hover:fill-black hover:scale-110 dark:fill-gray-400 dark:hover:fill-white" />
+            <logo.Icon className="w-6 h-6 fill-gray-700 transition hover:fill-black hover:scale-110 dark:fill-gray-400 dark:hover:fill-white high-contrast:fill-black" />
           </Link>
         ))}
       </div>
       {/* Copyright Paragraph */}
-      <p className="text-center text-gray-700 text-sm leading-6 dark:text-gray-400 md:order-1">
+      <p className="text-center text-gray-700 text-sm leading-6 dark:text-gray-400 high-contrast:fill-black md:order-1">
         © 2025 Ramsés Solano. Casi todos los derechos reservados.
       </p>
     </footer>

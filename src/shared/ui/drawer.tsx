@@ -29,19 +29,19 @@ function Drawer({ MenuIcon, children, side, inMobileOnly, isNav }: Props) {
     <>
       {/* Drawer Button */}
       <button onClick={toggle} className={inMobileOnly === true ? "lg:hidden" : ""}>
-        <MenuIcon className="w-7 h-7 fill-gray-700 hover:cursor-pointer dark:fill-gray-300" />
+        <MenuIcon className="w-7 h-7 fill-gray-700 hover:cursor-pointer dark:fill-gray-300 high-contrast:fill-black" />
       </button>
       {/* Drawer Overlay */}
       {open && (
         <button
-          className={`fixed inset-0 bg-black/40 z-40 ${inMobileOnly === true ? "lg:hidden" : ""}`}
+          className={`fixed inset-0 bg-black/40 z-40 high-contrast:bg-black ${inMobileOnly === true ? "lg:hidden" : ""}`}
           onClick={close}
           aria-label="Close drawer"
         />
       )}
       {/* Drawer Menu */}
       <div
-        className={`fixed top-0 ${POSITION_CLASS} h-full w-64 bg-gray-50 z-50 transform transition-transform duration-300 ease-in-out dark:bg-gray-950 ${open ? OPEN_CLASS : CLOSED_CLASS} ${inMobileOnly === true ? "lg:hidden" : ""}`.trimEnd()}
+        className={`fixed top-0 ${POSITION_CLASS} h-full w-64 bg-gray-50 z-50 transform transition-transform duration-300 ease-in-out dark:bg-gray-950 high-contrast:bg-white ${open ? OPEN_CLASS : CLOSED_CLASS} ${inMobileOnly === true ? "lg:hidden" : ""}`.trimEnd()}
       >
         {/* Drawer Menu Header */}
         <div className="flex items-center justify-between px-4 py-5 border-b border-gray-400/70">
@@ -49,7 +49,7 @@ function Drawer({ MenuIcon, children, side, inMobileOnly, isNav }: Props) {
           <MateoryLogo width={160} height={28} className="w-40 h-7" />
           {/* Drawer Menu Header X Mark Button to Close */}
           <button onClick={close}>
-            <FaXmark className="fill-gray-700 hover:cursor-pointer dark:fill-gray-300" />
+            <FaXmark className="fill-gray-700 hover:cursor-pointer dark:fill-gray-300 high-contrast:fill-black" />
           </button>
         </div>
         {/* Drawer Menu Scrollable Content */}
