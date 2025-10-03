@@ -12,7 +12,7 @@ export default function RootLayout({
   // Returns Main Layout
   return (
     <html lang="es">
-      <body className="flex flex-col h-screen bg-gray-50 overflow-hidden font-inter">
+      <body className="flex flex-col h-screen bg-gray-50 overflow-hidden font-inter dark:bg-gray-950">
         <Header />
         <div className="flex flex-1 h-[calc(100svh-69px-81px)] overflow-hidden">
           <SidebarNav />

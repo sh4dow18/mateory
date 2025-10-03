@@ -11,6 +11,8 @@
   font-family: "inter";
   src: url(/fonts/Inter.ttf) format("truetype");
 }
+/* Custom Themes Classes */
+@custom-variant dark (&:where(.dark, .dark *));
 /* Custom Scrollbar to Webkit (Chrome, Edge, Safari) */
 ::-webkit-scrollbar {
   width: 8px;

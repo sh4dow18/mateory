@@ -14,9 +14,11 @@ function AccessibilityMenu() {
     <Drawer MenuIcon={MdAccessible} side="right">
       {SECTIONS_LIST.map((section) => (
         <section key={section.id} className="flex gap-3 p-2">
-          <section.Icon className={`w-6 h-6 ${section.enabled ? "fill-black" : "fill-gray-600"}`} />
+          <section.Icon
+            className={`w-6 h-6 ${section.enabled ? "fill-black dark:fill-white" : "fill-gray-600 dark:fill-gray-400"}`}
+          />
           <span
-            className={`w-32 ${section.enabled ? "text-black font-semibold" : "text-gray-600"}`}
+            className={`w-32 ${section.enabled ? "text-black font-semibold dark:text-white" : "text-gray-600 dark:text-gray-400"}`}
           >
             {section.label}
           </span>
