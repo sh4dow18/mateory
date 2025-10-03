@@ -12,17 +12,13 @@ function useThemeLogo() {
   // Use Effect that allows to change svg in Image component
   useEffect(() => {
     // Use Dark Logo if Mateory is in Light Mode
-    setThemeLogo(
-      document.documentElement.classList.contains("dark") ? LIGHT_LOGO_PATH : DARK_LOGO_PATH,
-    );
+    setThemeLogo(document.body.classList.contains("dark") ? LIGHT_LOGO_PATH : DARK_LOGO_PATH);
     // Observer that Change the Dark Logo Value when theme change
     const OBSERVER = new MutationObserver(() => {
-      setThemeLogo(
-        document.documentElement.classList.contains("dark") ? LIGHT_LOGO_PATH : DARK_LOGO_PATH,
-      );
+      setThemeLogo(document.body.classList.contains("dark") ? LIGHT_LOGO_PATH : DARK_LOGO_PATH);
     });
     // Observer can observe the atrribute class
-    OBSERVER.observe(document.documentElement, {
+    OBSERVER.observe(document.body, {
       attributes: true,
       attributeFilter: ["class"],
     });

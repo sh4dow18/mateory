@@ -11,7 +11,7 @@ describe("useThemeLogo hook", () => {
   const LIGHT_LOGO_PATH = "/logos/light.svg";
   // Reset the document's classes before each test to use just the dark class
   beforeEach(() => {
-    document.documentElement.className = "";
+    document.body.className = "";
   });
   // Test 1: By default, in light mode, the hook should return the dark logo
   it("returns dark logo by default (light mode)", () => {
@@ -21,7 +21,7 @@ describe("useThemeLogo hook", () => {
   // Test 2: When the document has "dark" class, the hook should return the white logo
   it("returns white logo when dark mode is active", () => {
     // Simulate dark mode
-    document.documentElement.classList.add("dark");
+    document.body.classList.add("dark");
     const { result } = renderHook(() => useThemeLogo());
     expect(result.current).toBe(LIGHT_LOGO_PATH);
   });
@@ -32,7 +32,7 @@ describe("useThemeLogo hook", () => {
     expect(result.current).toBe(DARK_LOGO_PATH);
     // Simulate switching to dark mode
     act(() => {
-      document.documentElement.classList.add("dark");
+      document.body.classList.add("dark");
       // Trigger a re-render to simulate MutationObserver effect
       rerender();
     });
@@ -42,7 +42,7 @@ describe("useThemeLogo hook", () => {
     });
     // Simulate switching back to light mode
     act(() => {
-      document.documentElement.classList.remove("dark");
+      document.body.classList.remove("dark");
       rerender();
     });
     // Wait for observer to update state
