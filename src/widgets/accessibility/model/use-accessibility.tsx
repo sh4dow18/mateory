@@ -1,11 +1,12 @@
 // Set this hook as a client hook
 "use client";
 // Use Accessibility Requirements
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { IconType } from "react-icons";
 import { FaEye } from "react-icons/fa";
 import { IoMdContrast } from "react-icons/io";
 import { MdDarkMode, MdTextDecrease, MdTextIncrease } from "react-icons/md";
+import { GetAccessibilityPreferences, SetAccessibilityPreferences } from "../lib/local-storage";
 // Use Accessibility Types
 export type ThemeStates = {
   darkMode: boolean;
@@ -27,41 +28,80 @@ export type Section = {
   enabled: boolean;
   toggle: () => void;
 };
+// Use Accessibility Constants
+const DEFAULT_THEME_OBJECT = {
+  darkMode: false,
+  highContrast: false,
+  grayscale: false,
+};
+const DEFAULT_FONT_OBJECT = {
+  small: false,
+  large: false,
+  extraLarge: false,
+};
+const DEFAULT_MODE_OBJECT = {
+  dyslexia: false,
+};
+// Theme Effects Record to map keys to each toogle function
+const THEME_EFFECTS: Record<keyof ThemeStates, (enabled: boolean) => void> = {
+  darkMode: (enabled) => document.body.classList.toggle("dark", enabled),
+  highContrast: (enabled) => document.body.classList.toggle("high-contrast", enabled),
+  grayscale: (enabled) => document.body.classList.toggle("grayscale", enabled),
+};
+// Font Effects Record to map keys to each toogle function
+const FONT_EFFECTS: Record<keyof FontStates, (enabled: boolean) => void> = {
+  small: (enabled) => document.body.classList.toggle("font-small", enabled),
+  large: (enabled) => document.body.classList.toggle("font-large", enabled),
+  extraLarge: (enabled) => document.body.classList.toggle("font-xlarge", enabled),
+};
+// Mode Effects Record to map keys to each toogle function
+const MODE_EFFECTS: Record<keyof ModeStates, (enabled: boolean) => void> = {
+  dyslexia: (enabled) => {
+    document.body.classList.toggle("font-inter", !enabled);
+    document.body.classList.toggle("font-dyslexia", enabled);
+  },
+};
 // Use Accessibility Main Function
 function useAccessibility() {
   // Use Accessibility Hooks
-  const [theme, setTheme] = useState<ThemeStates>({
-    darkMode: false,
-    highContrast: false,
-    grayscale: false,
-  });
-  const [font, setFont] = useState<FontStates>({
-    small: false,
-    large: false,
-    extraLarge: false,
-  });
-  const [mode, setMode] = useState<ModeStates>({
-    dyslexia: false,
-  });
-  // Theme Effects Record to map keys to each toogle function
-  const THEME_EFFECTS: Record<keyof ThemeStates, (enabled: boolean) => void> = {
-    darkMode: (enabled) => document.body.classList.toggle("dark", enabled),
-    highContrast: (enabled) => document.body.classList.toggle("high-contrast", enabled),
-    grayscale: (enabled) => document.body.classList.toggle("grayscale", enabled),
-  };
-  // Font Effects Record to map keys to each toogle function
-  const FONT_EFFECTS: Record<keyof FontStates, (enabled: boolean) => void> = {
-    small: (enabled) => document.body.classList.toggle("font-small", enabled),
-    large: (enabled) => document.body.classList.toggle("font-large", enabled),
-    extraLarge: (enabled) => document.body.classList.toggle("font-xlarge", enabled),
-  };
-  // Mode Effects Record to map keys to each toogle function
-  const MODE_EFFECTS: Record<keyof ModeStates, (enabled: boolean) => void> = {
-    dyslexia: (enabled) => {
-      document.body.classList.toggle("font-inter", !enabled);
-      document.body.classList.toggle("font-dyslexia", enabled);
-    },
-  };
+  const [theme, setTheme] = useState<ThemeStates>(DEFAULT_THEME_OBJECT);
+  const [font, setFont] = useState<FontStates>(DEFAULT_FONT_OBJECT);
+  const [mode, setMode] = useState<ModeStates>(DEFAULT_MODE_OBJECT);
+  const PREFERENCES_LOADED = useRef(false);
+  // useEffect that will Set User Preferences in Hooks when page is loading
+  useEffect(() => {
+    // Get User Preferences from Local Storage
+    const USER_PREFERENCES = GetAccessibilityPreferences();
+    // Check if exist the user preferences
+    if (USER_PREFERENCES !== null) {
+      // If exists, add classes to body and hooks with user preferences
+      Object.entries(USER_PREFERENCES.theme).forEach(([key, enabled]) => {
+        THEME_EFFECTS[key as keyof ThemeStates](enabled);
+      });
+      setTheme(USER_PREFERENCES.theme);
+      Object.entries(USER_PREFERENCES.font).forEach(([key, enabled]) => {
+        FONT_EFFECTS[key as keyof FontStates](enabled);
+      });
+      setFont(USER_PREFERENCES.font);
+      Object.entries(USER_PREFERENCES.mode).forEach(([key, enabled]) => {
+        MODE_EFFECTS[key as keyof ModeStates](enabled);
+      });
+      setMode(USER_PREFERENCES.mode);
+    }
+    // Set preferences loaded as true
+    PREFERENCES_LOADED.current = true;
+  }, []);
+  // useEffect that will Set User Preferences in local storage when change in accessibility menu
+  useEffect(() => {
+    // If user preferences are loaded, set new accessibility preferences
+    if (PREFERENCES_LOADED.current) {
+      SetAccessibilityPreferences({
+        theme: theme,
+        font: font,
+        mode: mode,
+      });
+    }
+  }, [theme, font, mode]);
   // Genereic Toggle Function that gets an object which values are boolean
   const toggle = <T extends Record<string, boolean>>(
     // Toggle key to activate / deactivate
