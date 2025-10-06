@@ -1,7 +1,7 @@
 // Accessibility Local Storage Test Suite Requirements
 import { beforeEach, describe, expect, it } from "vitest";
 import { GetAccessibilityPreferences, SetAccessibilityPreferences } from "./local-storage";
-// Accessibility Local Storage Test Suite 
+// Accessibility Local Storage Test Suite
 describe("accessibility local storage", () => {
   // Before Each test, clear local storage
   beforeEach(() => localStorage.clear());
