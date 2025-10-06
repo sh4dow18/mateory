@@ -77,7 +77,7 @@ npm run lint
 ```
 
 - Naming:
-  - Feature folder: `kebab-case` (`inventory`)
+  - Files: `kebab-case` (`inventory`)
   - Components: `PascalCase` (`InventoryCard.tsx`)
   - Hooks: `camelCase` prefixed with `use` (`useInventory.ts`)
   - Services: `PascalCase` (`CalculateInventory`)

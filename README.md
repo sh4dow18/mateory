@@ -128,10 +128,16 @@ src/
  │       ├─ InventoryPage.tsx   -> Main Feature Page
  │       ├─ ui/                 -> UI Components
  │       ├─ model/              -> States, hooks, business layer
+ │       ├─ config/             -> Settings
  │       ├─ lib/                -> utils, services, helpers (local)
  │       └─ api/                -> utils, services, helpers (from API)
- └─ shared/                     -> General Stuff
-     ├─ ui/
+ ├─ shared/                     -> Generic and reusable Stuff
+ |    ├─ ui/
+ |    ...
+ └─ widgets/                    -> Functional fragments from a specific domain
+     ├─ navigation/
+     |  ├─ ui/
+     |  ...
      ...
 ```
 
