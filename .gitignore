@@ -3,7 +3,6 @@
 # Next.js
 /.next/
 /build/
-package-lock.json
 # env files
 .env*
 # Typescript
