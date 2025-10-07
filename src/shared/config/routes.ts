@@ -6,6 +6,7 @@ type Route = {
   readonly path: string;
   readonly label: string;
   readonly Icon: IconType;
+  readonly inSitemap: boolean;
 };
 // Routes List
-export const ROUTES_LIST: Route[] = [{ path: "", label: "Inicio", Icon: FaHome }];
+export const ROUTES_LIST: Route[] = [{ path: "", label: "Inicio", Icon: FaHome, inSitemap: true }];
