@@ -19,7 +19,7 @@ function DrawerNav() {
           href={`/${route.path}`}
           className={`flex gap-3 p-3 items-center font-small:text-sm font-large:text-lg font-xlarge:text-xl ${route.isActive ? "bg-primary text-white rounded-md dark:bg-primary/50" : "text-gray-950 dark:text-gray-400 high-contrast:text-black"}`}
         >
-          {<route.Icon className="w-6 h-6" />} {route.label}
+          {<route.Icon className="w-6 h-6" />} {route.title}
         </Link>
       ))}
     </Drawer>

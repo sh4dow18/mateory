@@ -36,12 +36,12 @@ function SidebarNav() {
             key={route.path}
             href={`/${route.path}`}
             className={`flex items-center gap-3 px-4 py-3 ${route.isActive ? "bg-primary text-white dark:bg-primary/70" : "text-gray-950 hover:bg-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 high-contrast:text-black high-contrast:hover:text-gray-50"}`}
-            title={!open ? route.label : undefined}
+            title={!open ? route.title : undefined}
           >
             <route.Icon className="w-6 h-6" />
             {open && (
               <span className="font-small:text-sm font-large:text-lg font-xlarge:text-xl">
-                {route.label}
+                {route.title}
               </span>
             )}
           </Link>
