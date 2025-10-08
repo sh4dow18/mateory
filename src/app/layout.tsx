@@ -16,7 +16,7 @@ export default function RootLayout({
         <Header />
         <div className="flex flex-1 h-[calc(100svh-69px-81px)] overflow-hidden">
           <SidebarNav />
-          <main className="flex-1 overflow-y-auto">{children}</main>
+          <main className="flex-1 overflow-y-auto p-8 space-y-8">{children}</main>
         </div>
         <Footer />
       </body>

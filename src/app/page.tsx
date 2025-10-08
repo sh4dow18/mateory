@@ -1,6 +1,8 @@
+// Home Page Requirements
+import HomePage from "@/features/home/home-page";
 // Home page
 function Page() {
-  return <></>;
+  return <HomePage />;
 }
 
 export default Page;
