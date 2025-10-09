@@ -13,7 +13,7 @@ const { useSidebarNavMock, toggleMock, useRoutesMock } = vi.hoisted(() => {
     useRoutesMock: vi.fn(() => [
       {
         path: "",
-        label: "Inicio",
+        title: "Inicio",
         Icon: () => <div data-testid="icon-home" />,
         isActive: true,
       },
