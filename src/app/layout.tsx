@@ -3,6 +3,23 @@ import "@/app/globals.css";
 // Main Layout Requirements
 import { Footer, Header } from "@/shared/ui";
 import { SidebarNav } from "@/widgets/navigation/ui";
+import { Metadata } from "next";
+// Main Layout Metadata
+export const metadata: Metadata = {
+  title: {
+    default: "Mateory",
+    template: "%s | Mateory",
+  },
+  description:
+    "Mateory es una herramienta web que simplifica la resolución de problemas de Teorías de Inventarios y Teorías de Colas.",
+  keywords: [
+    "teoría de colas",
+    "teoría de inventarios",
+    "investigación de operaciones",
+    "optimización",
+    "Mateory",
+  ],
+};
 // Main Layout Main Function
 export default function RootLayout({
   children,
