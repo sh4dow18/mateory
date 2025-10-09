@@ -12,12 +12,12 @@ function HomePage() {
       {/* Home Page Main Component Main Section */}
       <section className="space-y-4">
         <section className="flex flex-wrap gap-2 items-center sm:gap-4">
-          <h1 className="text-3xl sm:text-4xl font-semibold text-primary dark:text-primary-light">
+          <h1 className="text-3xl font-semibold text-primary dark:text-primary-light sm:text-4xl">
             Bienvenido a
           </h1>
           <MateoryLogo width={192} height={32} className="w-48 h-8" />
         </section>
-        <p className="text-lg text-gray-700 dark:text-gray-400">
+        <p className="text-lg text-gray-700 dark:text-gray-400 high-contrast:text-black">
           Mateory es una herramienta web que simplifica la resolución de problemas de{" "}
           <strong>Teorías de Inventarios</strong> y <strong>Teorías de Colas</strong>. Optimice sus
           cálculos y visualice las fórmulas detrás de cada modelo.
@@ -42,7 +42,7 @@ function HomePage() {
           <h2 className="text-2xl font-semibold text-primary mb-1 dark:text-primary-light">
             Calcula más rápido y con confianza
           </h2>
-          <p className="text-gray-700 dark:text-gray-400">
+          <p className="text-gray-700 dark:text-gray-400 high-contrast:text-black">
             Mateory combina precisión matemática con una interfaz clara y accesible. Observa los
             beneficios principales de usar la herramienta:
           </p>
@@ -62,7 +62,7 @@ function HomePage() {
         </div>
       </Card>
       {/* Home Page Main Component Information Section */}
-      <section className="flex flex-col gap-1 text-gray-600 justify-self-center text-center dark:text-gray-400 md:flex-row md:text-left">
+      <section className="flex flex-col gap-1 text-gray-600 justify-self-center text-center dark:text-gray-400 high-contrast:text-black md:flex-row md:text-left">
         <RiInformationFill className="w-6 h-6 mx-auto md:mx-0" />
         <p>¿Quieres conocer más sobre Mateory? </p>
         <Link

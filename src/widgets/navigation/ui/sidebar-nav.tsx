@@ -12,7 +12,7 @@ function SidebarNav() {
   const ROUTES_LIST = useRoutes();
   // Return Sidebar Nav Component
   return (
-    <aside className="hidden h-svh bg-gray-50 text-gray-700 flex-col border-r border-gray-400/50 dark:bg-gray-950 dark:text-gray-400 high-contrast:bg-white high-contrast:text-black lg:flex">
+    <aside className="hidden h-svh bg-gray-50 text-gray-700 flex-col border-r border-gray-400/50 dark:bg-gray-950 dark:text-gray-400 high-contrast:bg-white high-contrast:text-black high-contrast:border-black lg:flex">
       {/* Sidebar Nav Toggle button */}
       <button
         className="flex justify-center items-center gap-3 p-4 border-b border-gray-400/50 select-none hover:bg-gray-200 hover:cursor-pointer dark:hover:bg-gray-800 high-contrast:bg-gray-50"
@@ -35,7 +35,7 @@ function SidebarNav() {
           <Link
             key={route.path}
             href={`/${route.path}`}
-            className={`flex items-center gap-3 px-4 py-3 ${route.isActive ? "bg-primary text-white dark:bg-primary/70" : "text-gray-950 hover:bg-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 high-contrast:text-black high-contrast:hover:text-gray-50"}`}
+            className={`flex items-center gap-3 px-4 py-3 ${route.isActive ? "bg-primary text-white dark:bg-primary/70" : "text-gray-950 hover:bg-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 high-contrast:text-black"}`}
             title={!open ? route.title : undefined}
           >
             <route.Icon className="w-6 h-6" />

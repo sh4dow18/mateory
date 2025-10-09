@@ -25,7 +25,7 @@ function SummaryCard({ Icon, title, summary, link, colored, wrapTitle }: Props) 
         <Icon aria-label="icon" /> {title}
       </section>
       {/* Summary Card Summary */}
-      <p className="text-gray-600 text-sm dark:text-gray-400">{summary}</p>
+      <p className="text-gray-600 text-sm dark:text-gray-400 high-contrast:text-black">{summary}</p>
     </Card>
   );
 }
