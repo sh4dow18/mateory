@@ -1,6 +1,6 @@
 # Mateory
 
-[![Version](https://img.shields.io/badge/version-0.0.0-00AA00?style=for-the-badge&logo=github&labelColor=gray)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.1.0-00AA00?style=for-the-badge&logo=github&labelColor=gray)](CHANGELOG.md)
 [![License](https://img.shields.io/badge/license-MIT-0066AA?style=for-the-badge&labelColor=gray)](LICENSE)
 [![CI-CD](https://img.shields.io/github/actions/workflow/status/sh4dow18/mateory-fsd/ci-cd.yml?style=for-the-badge&label=CI-CD&labelColor=gray&logo=vercel&labelColor=white)](https://github.com/sh4dow18/mateory-fsd/actions)
 [![Storybook](https://img.shields.io/badge/docs-Storybook-ff4785?style=for-the-badge&labelColor=gray&logo=storybook)](https://ramses-solano.vercel.app/mateory)
@@ -13,8 +13,7 @@ model for inventories or the **M/M/1:FIFO/∞/∞** for queues
 
 ## Project Status
 
-**Version 0.0.0 — Project initialization**
-Currently, no features are available. See [`CHANGELOG.md`](CHANGELOG.md) for version history.
+**Version 0.1.0**. See [`CHANGELOG.md`](CHANGELOG.md) for version history.
 
 ---
 
@@ -128,10 +127,16 @@ src/
  │       ├─ InventoryPage.tsx   -> Main Feature Page
  │       ├─ ui/                 -> UI Components
  │       ├─ model/              -> States, hooks, business layer
+ │       ├─ config/             -> Settings
  │       ├─ lib/                -> utils, services, helpers (local)
  │       └─ api/                -> utils, services, helpers (from API)
- └─ shared/                     -> General Stuff
-     ├─ ui/
+ ├─ shared/                     -> Generic and reusable Stuff
+ |    ├─ ui/
+ |    ...
+ └─ widgets/                    -> Functional fragments from a specific domain
+     ├─ navigation/
+     |  ├─ ui/
+     |  ...
      ...
 ```
 
@@ -167,10 +172,6 @@ Use the templates in `.github/ISSUE_TEMPLATE/` to report bugs or suggest feature
 This project uses the **MIT** license. See the [`LICENSE`](LICENSE) file for details.
 
 ---
-
-## Using Visual Studio Code
-
-If you are using Visual Studio Code, the file `tasks.json` in `.vscode` will execute the `npm run dev` when Visual Studio Code is starting
 
 ## Author
 

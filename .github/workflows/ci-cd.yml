@@ -30,22 +30,30 @@ jobs:
       # 1- Clone Repo in VM
       - name: Checkout repository
         uses: actions/checkout@v3
-      # 2️- Setup Node in VM with the Node Version set in Strategy
+        with:
+          fetch-depth: 0
+      # 2- Check if commits are convensional commits
+      - name: Lint commits
+        uses: wagoid/commitlint-github-action@v4
+        with:
+          configFile: commitlint.config.js
+          firstParent: false
+      # 23- Setup Node in VM with the Node Version set in Strategy
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
-      # 3️- Install Dependencies
+      # 4- Install Dependencies
       - name: Install dependencies
         run: npm install
-      # 4- Check Lint
+      # 5- Check Lint
       - name: Check Link
         run: npm run lint
-      # 5- Run Tests
+      # 6- Run Tests
       - name: Run tests
         run: npm run test
-      # 6- Build Project
+      # 7- Build Project
       - name: Build project
         run: npm run build
   # When is a Preview deploy
@@ -55,7 +63,7 @@ jobs:
     # Means that the job needs the Build Job first
     needs: build
     # Set that this is just for develop branch
-    if: github.ref_name == "develop"
+    if: ${{ github.ref_name == 'develop' }}
     # Virtual Machine Operative System to run the Preview Deploys Job
     runs-on: ubuntu-latest
     # Preview Deploys Job Steps
@@ -79,7 +87,7 @@ jobs:
     # Means that the job needs the Build Job first
     needs: build
     # Set that this is just for main branch
-    if: github.ref_name == 'main'
+    if: ${{ github.ref_name == 'main' }}
     # Virtual Machine Operative System to run the Production Deploys Job
     runs-on: ubuntu-latest
     # Preview Deploys Job Steps

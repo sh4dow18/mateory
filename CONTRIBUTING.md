@@ -77,7 +77,7 @@ npm run lint
 ```
 
 - Naming:
-  - Feature folder: `kebab-case` (`inventory`)
+  - Files: `kebab-case` (`inventory`)
   - Components: `PascalCase` (`InventoryCard.tsx`)
   - Hooks: `camelCase` prefixed with `use` (`useInventory.ts`)
   - Services: `PascalCase` (`CalculateInventory`)
@@ -188,4 +188,14 @@ git push origin feature/descriptive-name
 
 If you need help, open an issue or contact **sh4dow18** via GitHub.
 
-Thank you for helping improve this project!
+---
+
+## 11. Notes
+
+- If you are using Visual Studio Code
+  - The file `tasks.json` in `.vscode` will execute the `npm run dev` when Visual Studio Code is starting.
+  - The file `settings.json` in `.vscode` will help to [`Autobarrel Extension`](https://marketplace.visualstudio.com/items?itemName=imgildev.vscode-auto-barrel) to create barrels correctly
+
+---
+
+**Thank you for helping improve this project!**

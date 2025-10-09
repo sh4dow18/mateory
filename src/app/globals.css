@@ -1,2 +1,45 @@
 /* Tailwind CSS Imports */
 @import "tailwindcss";
+/* Tailwind CSS Theme Config */
+@theme {
+  --font-inter: inter;
+  --font-dyslexia: dyslexia;
+  --color-primary: #a72dbc;
+  --color-primary-light: #a54ab5;
+}
+/* Add Inter Font to use with Tailwind CSS */
+@font-face {
+  font-family: "inter";
+  src: url(/fonts/Inter.ttf) format("truetype");
+}
+/* Add Open Dyslexic Font to use with Tailwind CSS */
+@font-face {
+  font-family: "dyslexia";
+  src: url(/fonts/open-dyslexic.ttf) format("truetype");
+}
+/* Custom Themes Classes */
+@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant high-contrast (&:where(.high-contrast, .high-contrast *));
+/* Custom Font Classes */
+@custom-variant font-small (&:where(.font-small, .font-small *));
+@custom-variant font-large (&:where(.font-large, .font-large *));
+@custom-variant font-xlarge (&:where(.font-xlarge, .font-xlarge *));
+/* Custom Scrollbar to Webkit (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1f2937; /* bg-gray-800 */
+}
+::-webkit-scrollbar-thumb {
+  background: #4b5563; /* bg-gray-600 */
+  border-radius: 9999px; /* rounded */
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6b7280; /* bg-gray-500 */
+}
+/* To Firefox and Opera*/
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #4b5563 #1f2937;
+}
