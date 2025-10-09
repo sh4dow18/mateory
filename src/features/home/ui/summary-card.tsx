@@ -20,12 +20,14 @@ function SummaryCard({ Icon, title, summary, link, colored, wrapTitle }: Props) 
     <Card link={link} colored={colored}>
       {/* Summary Card Title Section */}
       <section
-        className={`flex items-center gap-3 text-primary font-semibold mb-3 text-lg dark:text-gray-300 ${WRAP_CLASS}`.trimEnd()}
+        className={`flex items-center gap-3 text-primary font-semibold mb-3 text-lg dark:text-gray-300 font-small:text-base font-large:text-xl font-xlarge:text-2xl ${WRAP_CLASS}`.trimEnd()}
       >
         <Icon aria-label="icon" /> {title}
       </section>
       {/* Summary Card Summary */}
-      <p className="text-gray-600 text-sm dark:text-gray-400 high-contrast:text-black">{summary}</p>
+      <p className="text-gray-600 text-sm dark:text-gray-400 high-contrast:text-black font-small:text-xs font-large:text-base font-xlarge:text-lg">
+        {summary}
+      </p>
     </Card>
   );
 }
