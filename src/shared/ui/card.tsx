@@ -11,9 +11,10 @@ interface Props {
 function Card({ children, link, colored }: Props) {
   // Card Constants
   const LINK_CLASS = link
-    ? "transition-all cursor-pointer hover:shadow-lg hover:border-primary"
+    ? "transition-shadow cursor-pointer hover:shadow-lg hover:border-primary dark:hover:border-primary-light"
     : "";
-  const COLORED_CLASS = colored === true ? "bg-primary/5" : "bg-white";
+  const COLORED_CLASS =
+    colored === true ? "bg-primary/5 dark:bg-primary/10" : "bg-white dark:bg-gray-900";
   const CLASSES =
     `border border-primary/30 rounded-2xl p-6 space-y-6 ${COLORED_CLASS} ${LINK_CLASS}`.trimEnd();
   // Return Card Component
