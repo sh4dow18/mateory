@@ -1,0 +1,28 @@
+// Get Optimal Production Lot Size Formula Test Suite Requirements
+import { GetFloatResult } from "../../shared";
+import { describe, expect, it } from "vitest";
+import { GetOptimalProductionLotSize } from "./get-optimal-production-lot-size";
+// Get Optimal Production Lot Size Formula Test Suite
+describe("GetOptimalProductionLotSize", () => {
+  // Get Optimal Production Lot Size Formula Test Suite Constants
+  const MOCK_PARAMS = {
+    demand: 3000,
+    launchCost: 100,
+    inventoryHoldingCost: 3,
+  };
+  const MOCK_SETTINGS = {
+    decimals: 2,
+  };
+  // Test 1: Calc Correctly
+  it("calc correctly", () => {
+    // Set Mock Variables
+    const { demand, launchCost, inventoryHoldingCost } = MOCK_PARAMS;
+    const { decimals } = MOCK_SETTINGS;
+    // Set Expected Result
+    const EXPECTED = Math.sqrt((2 * demand * launchCost) / inventoryHoldingCost);
+    // Get the Result from Formula Function
+    const RESULT = GetOptimalProductionLotSize(MOCK_PARAMS, MOCK_SETTINGS);
+    // Check if the Result is the right one
+    expect(RESULT).toBe(GetFloatResult(EXPECTED, decimals));
+  });
+});
