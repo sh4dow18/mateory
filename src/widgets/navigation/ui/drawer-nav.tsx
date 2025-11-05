@@ -3,9 +3,9 @@
 // Drawer Nav Requirements
 import React from "react";
 import { CiMenuBurger } from "react-icons/ci";
-import { Drawer } from "@/shared/ui";
 import Link from "next/link";
 import { useRoutes } from "../model";
+import { Drawer } from "@/widgets/spaces/ui";
 // Drawer Nav Main Function
 function DrawerNav() {
   // Drawer Nav Hooks
