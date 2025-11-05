@@ -33,7 +33,7 @@ export default function RootLayout({
         <Header />
         <div className="flex flex-1 h-[calc(100svh-69px-81px)] overflow-hidden">
           <SidebarNav />
-          <main className="flex-1 overflow-y-auto p-8 space-y-8">{children}</main>
+          <main className="flex-1 overflow-y-auto space-y-8 py-8 px-4 md:px-8">{children}</main>
         </div>
         <Footer />
       </body>
