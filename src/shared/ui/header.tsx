@@ -1,6 +1,6 @@
 // Header Requirements
 import { DrawerNav } from "@/widgets/navigation/ui";
-import MateoryLogo from "./mateory-logo";
+import { MateoryLogo } from "@/widgets/images/ui";
 import Link from "next/link";
 import { AccessibilityMenu } from "@/widgets/accessibility/ui";
 // Header Main Function
