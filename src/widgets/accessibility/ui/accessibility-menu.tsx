@@ -1,10 +1,11 @@
 // Set this component as a client component
 "use client";
 // Accessibility Menu Requirements
-import { Drawer, Switch } from "@/shared/ui";
+import { Switch } from "@/shared/ui";
 import React from "react";
 import { MdAccessible } from "react-icons/md";
 import { useAccessibility } from "../model";
+import { Drawer } from "@/widgets/spaces/ui";
 // Accessibility Menu Main Function
 function AccessibilityMenu() {
   // Accessibility Menu Hooks

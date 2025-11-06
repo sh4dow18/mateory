@@ -1,6 +1,8 @@
 export { default as Card } from "./card";
-export { default as Drawer } from "./drawer";
 export { default as Footer } from "./footer";
 export { default as Header } from "./header";
-export { default as MateoryLogo } from "./mateory-logo";
+export { default as ModelButton } from "./model-button";
+export { default as PageTitle } from "./page-title";
+export { default as ResultCard } from "./result-card";
+export { default as SectionCard } from "./section-card";
 export { default as Switch } from "./switch";

@@ -2,7 +2,7 @@
 "use client";
 // Drawer Requirements
 import { IconType } from "react-icons";
-import MateoryLogo from "./mateory-logo";
+import { MateoryLogo } from "@/widgets/images/ui";
 import { FaXmark } from "react-icons/fa6";
 import React from "react";
 import { useDrawer } from "../model";
