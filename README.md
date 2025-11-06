@@ -1,6 +1,6 @@
 # Mateory
 
-[![Version](https://img.shields.io/badge/version-0.1.0-00AA00?style=for-the-badge&logo=github&labelColor=gray)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.2.0-00AA00?style=for-the-badge&logo=github&labelColor=gray)](CHANGELOG.md)
 [![License](https://img.shields.io/badge/license-MIT-0066AA?style=for-the-badge&labelColor=gray)](LICENSE)
 [![CI-CD](https://img.shields.io/github/actions/workflow/status/sh4dow18/mateory-fsd/ci-cd.yml?style=for-the-badge&label=CI-CD&labelColor=gray&logo=vercel&labelColor=white)](https://github.com/sh4dow18/mateory-fsd/actions)
 [![Storybook](https://img.shields.io/badge/docs-Storybook-ff4785?style=for-the-badge&labelColor=gray&logo=storybook)](https://ramses-solano.vercel.app/mateory)
@@ -13,7 +13,7 @@ model for inventories or the **M/M/1:FIFO/∞/∞** for queues
 
 ## Project Status
 
-**Version 0.1.0**. See [`CHANGELOG.md`](CHANGELOG.md) for version history.
+**Version 0.2.0**. See [`CHANGELOG.md`](CHANGELOG.md) for version history.
 
 ---
 
@@ -22,8 +22,8 @@ model for inventories or the **M/M/1:FIFO/∞/∞** for queues
 Clone the repository:
 
 ```
-git clone https://github.com/sh4dow18/mateory.git
-cd mateory
+git clone https://github.com/sh4dow18/mateory-fsd.git
+cd mateory-fsd
 ```
 
 Install dependencies:
@@ -149,8 +149,6 @@ src/
 | ✅     | Initialize project                 |
 | X      | Migrate to feature-based structure |
 | X      | Add Storybook and first stories    |
-| X      | Basic tests for services and hooks |
-| X      | CI for lint + tests                |
 | X      | Deploy Storybook for portfolio     |
 
 ---

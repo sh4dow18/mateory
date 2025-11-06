@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/sh4dow18/mateory-fsd/compare/v0.1.0...v0.2.0) (2025-11-06)
+
+
+### Features
+
+* **home:** page title component ([d913048](https://github.com/sh4dow18/mateory-fsd/commit/d9130489c11353af728ee855c98fce0dcdde52cc))
+* **inventories:** add eoq with deficit model formulas ([536e99d](https://github.com/sh4dow18/mateory-fsd/commit/536e99d802c08738f77c3ccf3671934a2e35ebbd))
+* **inventories:** add eoq without deficit model formulas ([6179913](https://github.com/sh4dow18/mateory-fsd/commit/61799132ffbf301359d77053a0cde2818538c20b))
+* **inventories:** add epq with deficit model formulas ([c9d1595](https://github.com/sh4dow18/mateory-fsd/commit/c9d159558b2c71a37d48fd7166d0e77677e8eaf8))
+* **inventories:** add epq without deficit model formulas ([b0f41c1](https://github.com/sh4dow18/mateory-fsd/commit/b0f41c1606006e11149826338c182f6ba047212c))
+* **inventories:** add formulas dispatchers ([1db3728](https://github.com/sh4dow18/mateory-fsd/commit/1db37287d02cc4f3acdf3aa85bbc8bd1b465bea8))
+* **inventories:** add page ([28074f4](https://github.com/sh4dow18/mateory-fsd/commit/28074f4b7660138922047cbdd0c18c33ed937a64))
+* **inventories:** add shared formulas between models ([ac67c82](https://github.com/sh4dow18/mateory-fsd/commit/ac67c821ff63a6c6dda51581f8e562f57ef27f17))
+
 ## [0.1.0](https://github.com/sh4dow18/mateory-fsd/compare/v0.0.0...v0.1.0) (2025-10-09)
 
 
