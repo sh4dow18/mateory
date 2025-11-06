@@ -4,11 +4,14 @@ import { describe, expect, it, MockedFunction, vi } from "vitest";
 import useInventories from "./use-inventories";
 import { GetEnabledInventoryResults, MODELS_IDS, MODELS_LIST } from "../config";
 // Use Inventories Hook Test Suite Mocks
-vi.mock("../config", () => ({
-  MODELS_LIST: [{ id: MODELS_IDS.epqWithoutDeficit }],
-  MODELS_IDS: { epqWithoutDeficit: "epqWithoutDeficit", epqWithDeficit: "epqWithDeficit" },
-  GetEnabledInventoryResults: vi.fn(() => ({ totalCost: 0 })),
-}));
+vi.mock("../config", () => {
+  const MODELS_IDS = { epqWithoutDeficit: "epqWithoutDeficit", epqWithDeficit: "epqWithDeficit" };
+  return {
+    MODELS_LIST: [{ id: MODELS_IDS.epqWithoutDeficit }],
+    MODELS_IDS: MODELS_IDS,
+    GetEnabledInventoryResults: vi.fn(() => ({ totalCost: 0 })),
+  };
+});
 vi.mock("./calculate-results", () => ({
   CalculateResults: vi.fn(() => ({ totalCost: 123 })),
 }));
