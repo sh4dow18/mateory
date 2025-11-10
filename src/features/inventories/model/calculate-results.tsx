@@ -20,8 +20,7 @@ import {
   GetTotalProductionCost,
   GetTotalUnitProductionCost,
 } from "../lib/formulas/shared";
-import { VARIABLES_LIST } from "../config";
-import { RESULTS_CONFIG_LIST } from "@/widgets/forms/config/results-settings";
+import { RESULTS_CONFIG_LIST, VARIABLES_LIST } from "../config";
 // Calculate Results Main Function
 export function CalculateResults(selectedModel: string, form: HTMLFormElement) {
   // Get every value from Form Variable

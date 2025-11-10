@@ -7,9 +7,7 @@ import { GetTotalDeficitCost } from "../lib/formulas/dispatchers";
 vi.mock("../config", () => ({
   VARIABLES_LIST: [],
   MODELS_IDS: { epqWithoutDeficit: "epqWithoutDeficit", epqWithDeficit: "epqWithDeficit" },
-}));
-vi.mock("../config/results-settings", () => ({
-  RESULTS_SETTINGS_LIST: [],
+  RESULTS_CONFIG_LIST: [],
 }));
 vi.mock("@/shared/config/form", () => ({
   GetFormVariablesParams: vi.fn(() => ({ demand: 100 })),
