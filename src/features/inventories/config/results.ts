@@ -1,6 +1,6 @@
 // Inventories Results Requirements
 import { GetEnabledResults, Result, ResultValue } from "@/shared/config/results";
-import { GetDisabledInventoryModels } from "./models";
+import { GetDisabledInventoryModels, MODELS_IDS } from "./models";
 // Get Enabled Inventory Models
 export const GetEnabledInventoryResults = (selectedModel: string, value: ResultValue) => {
   return GetEnabledResults(RESULTS_LIST, selectedModel, value);
@@ -40,27 +40,27 @@ export const RESULTS_LIST: Result[] = [
   {
     id: "secondTimeInterval",
     name: "Segundo Intervalo de Tiempo",
-    disabledInModels: ["eoq-without-deficit"],
+    disabledInModels: [MODELS_IDS.eoqWithoutDeficit],
   },
   {
     id: "thirdTimeInterval",
     name: "Tercer Intervalo de Tiempo",
-    disabledInModels: GetDisabledInventoryModels("epq-with-deficit", "different"),
+    disabledInModels: GetDisabledInventoryModels(MODELS_IDS.epqWithDeficit, "different"),
   },
   {
     id: "fourthTimeInterval",
     name: "Cuarto Intervalo de Tiempo",
-    disabledInModels: GetDisabledInventoryModels("epq-with-deficit", "different"),
+    disabledInModels: GetDisabledInventoryModels(MODELS_IDS.epqWithDeficit, "different"),
   },
   {
     id: "cycleTimeLengthRatio",
     name: "Razón de Longitud del tiempo del ciclo",
-    disabledInModels: GetDisabledInventoryModels("eoq-without-deficit", "different"),
+    disabledInModels: GetDisabledInventoryModels(MODELS_IDS.eoqWithoutDeficit, "different"),
   },
   {
     id: "reorderPoint",
     name: "Punto de Reorden",
-    disabledInModels: GetDisabledInventoryModels("eoq-without-deficit", "different"),
+    disabledInModels: GetDisabledInventoryModels(MODELS_IDS.eoqWithoutDeficit, "different"),
   },
   {
     id: "totalInventoryHoldingCost",
