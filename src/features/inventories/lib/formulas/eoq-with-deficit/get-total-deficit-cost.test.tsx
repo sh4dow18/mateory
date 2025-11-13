@@ -1,5 +1,5 @@
 // Get Total Deficit Cost Formula Test Suite Requirements
-import { GetAccountNumber, GetFloatResult } from "../../shared";
+import { GetFloatResult } from "@/shared/lib";
 import { describe, expect, it } from "vitest";
 import { GetTotalDeficitCost } from "./get-total-deficit-cost";
 // Get Total Deficit Cost Formula Test Suite
@@ -18,11 +18,9 @@ describe("GetTotalDeficitCost", () => {
   it("calc correctly", () => {
     // Get Params from Mock Params Variable
     const { deficitCost } = MOCK_PARAMS;
-    const { decimals, currency } = MOCK_SETTINGS;
+    const { decimals } = MOCK_SETTINGS;
     // Set Expected Result
     const EXPECTED = (deficitCost * MOCK_MAX_DEFICIT * MOCK_SECOND_TIME_INTERVAL) / 2;
-    const FLOAT_RESULT = GetFloatResult(EXPECTED, decimals);
-    const EXPECTED_STRING = GetAccountNumber(currency, FLOAT_RESULT);
     // Get the Result from Formula Function
     const RESULT = GetTotalDeficitCost(
       MOCK_MAX_DEFICIT,
@@ -31,7 +29,6 @@ describe("GetTotalDeficitCost", () => {
       MOCK_SETTINGS,
     );
     // Check if the Result is the right one
-    expect(RESULT.number).toBe(FLOAT_RESULT);
-    expect(RESULT.string).toBe(EXPECTED_STRING);
+    expect(RESULT).toBe(GetFloatResult(EXPECTED, decimals));
   });
 });

@@ -1,8 +1,7 @@
 // Get Total Inventory Holding Cost Formula Test Suite Requirements
-import { GetAccountNumber, GetFloatResult } from "../../shared";
+import { GetFloatResult } from "@/shared/lib";
 import { describe, expect, it } from "vitest";
 import { GetTotalInventoryHoldingCost } from "./get-total-inventory-holding-cost";
-
 // Get Total Inventory Holding Cost Formula Test Suite
 describe("GetTotalInventoryHoldingCost", () => {
   // Get Total Inventory Holding Cost Formula Test Suite Constants
@@ -19,12 +18,10 @@ describe("GetTotalInventoryHoldingCost", () => {
   it("calc correctly", () => {
     // Get Params from Mock Params Variable
     const { inventoryHoldingCost } = MOCK_PARAMS;
-    const { decimals, currency } = MOCK_SETTINGS;
+    const { decimals } = MOCK_SETTINGS;
     // Set Expected Result
     const EXPECTED =
       (inventoryHoldingCost * MOCK_MAX_INVENTORY_LEVEL * MOCK_FIRST_TIME_INTERVAL) / 2;
-    const FLOAT_RESULT = GetFloatResult(EXPECTED, decimals);
-    const EXPECTED_STRING = GetAccountNumber(currency, FLOAT_RESULT);
     // Get the Result from Formula Function
     const RESULT = GetTotalInventoryHoldingCost(
       MOCK_MAX_INVENTORY_LEVEL,
@@ -33,7 +30,6 @@ describe("GetTotalInventoryHoldingCost", () => {
       MOCK_SETTINGS,
     );
     // Check if the Result is the right one
-    expect(RESULT.number).toBe(FLOAT_RESULT);
-    expect(RESULT.string).toBe(EXPECTED_STRING);
+    expect(RESULT).toBe(GetFloatResult(EXPECTED, decimals));
   });
 });

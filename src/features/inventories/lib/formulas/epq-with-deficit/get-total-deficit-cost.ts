@@ -1,6 +1,6 @@
 // Get Total Deficit Cost Requirements
 import { FormVariables } from "@/widgets/forms/config/form";
-import { GetAccountNumber, GetFloatResult } from "../../shared";
+import { GetFloatResult } from "@/shared/lib";
 // Function that allows to Get the Total Deficit Cost
 export function GetTotalDeficitCost(
   maxDeficit: number,
@@ -10,13 +10,9 @@ export function GetTotalDeficitCost(
   settings: FormVariables,
 ) {
   const { deficitCost } = params;
-  const { decimals, currency } = settings;
+  const { decimals } = settings;
   const FIRST_PART = deficitCost * maxDeficit;
   const SECOND_PART = thirdTimeInterval + fourthTimeInterval;
   const RESULT = (FIRST_PART * SECOND_PART) / 2;
-  const FLOAT_RESULT = GetFloatResult(RESULT, decimals);
-  return {
-    string: GetAccountNumber(currency, FLOAT_RESULT),
-    number: FLOAT_RESULT,
-  };
+  return GetFloatResult(RESULT, decimals);
 }
