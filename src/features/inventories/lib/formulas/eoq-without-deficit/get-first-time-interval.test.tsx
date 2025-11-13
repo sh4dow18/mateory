@@ -1,5 +1,5 @@
 // Get First Time Interval Formula Test Suite Requirements
-import { GetFloatResult } from "../../shared";
+import { GetFloatResult } from "@/shared/lib";
 import { describe, expect, it } from "vitest";
 import { GetFirstTimeInterval } from "./get-first-time-interval";
 // Get First Time Interval Formula Test Suite

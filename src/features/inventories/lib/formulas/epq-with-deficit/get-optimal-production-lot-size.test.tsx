@@ -1,5 +1,5 @@
 // Get Optimal Production Lot Size Formula Test Suite Requirements
-import { GetFloatResult } from "../../shared";
+import { GetFloatResult } from "@/shared/lib";
 import { describe, expect, it } from "vitest";
 import { GetOptimalProductionLotSize } from "./get-optimal-production-lot-size";
 // Get Optimal Production Lot Size Formula Test Suite

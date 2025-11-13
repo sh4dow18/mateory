@@ -1,6 +1,6 @@
 // Get Fourth Time Interval Requirements
 import { FormVariables } from "@/widgets/forms/config/form";
-import { GetFloatResult } from "../../shared";
+import { GetFloatResult } from "@/shared/lib";
 // Function that allows to Get the Fourth Time Interval
 export function GetFourthTimeInterval(
   maxDeficit: number,

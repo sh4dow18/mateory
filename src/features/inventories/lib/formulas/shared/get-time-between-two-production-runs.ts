@@ -1,6 +1,6 @@
 // Get Time Between Two Production Runs Requirements
 import { FormVariables } from "@/widgets/forms/config/form";
-import { GetFloatResult } from "../../shared";
+import { GetFloatResult } from "@/shared/lib";
 // Function that allows to Get the Time Between Two Production Runs
 export function GetTimeBetweenTwoProductionRuns(
   frequencyBetweenTwoProductionRuns: number,

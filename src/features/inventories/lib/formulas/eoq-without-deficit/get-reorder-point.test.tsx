@@ -1,8 +1,7 @@
 // Get Reorder Point Formula Test Suite Requirements
-import { GetFloatResult } from "../../shared";
+import { GetFloatResult } from "@/shared/lib";
 import { describe, expect, it } from "vitest";
 import { GetReorderPoint } from "./get-reorder-point";
-
 // Get Reorder Point Formula Test Suite
 describe("GetReorderPoint", () => {
   // Get Reorder Point Formula Test Suite Constants

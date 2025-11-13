@@ -1,6 +1,6 @@
 // Get Cycle Time Length Ratio Requirements
 import { FormVariables } from "@/widgets/forms/config/form";
-import { GetFloatResult } from "../../shared";
+import { GetFloatResult } from "@/shared/lib";
 // Function that allows to Get the Cycle Time Length Ratio
 export function GetCycleTimeLengthRatio(
   frequencyBetweenTwoProductionRuns: number,

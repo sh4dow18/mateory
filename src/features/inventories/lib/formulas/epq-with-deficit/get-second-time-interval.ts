@@ -1,6 +1,6 @@
 // Get Second Time Interval Requirements
 import { FormVariables } from "@/widgets/forms/config/form";
-import { GetFloatResult } from "../../shared";
+import { GetFloatResult } from "@/shared/lib";
 // Function that allows to Get the Second Time Interval
 export function GetSecondTimeInterval(params: FormVariables, settings: FormVariables) {
   const { launchCost, deficitCost, demand, constantOutputRatio, inventoryHoldingCost } = params;
