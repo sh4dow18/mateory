@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/sh4dow18/mateory-fsd/compare/v0.2.0...v0.3.0) (2025-11-13)
+
+
+### Features
+
+* **queues:** add formulas dispatchers ([32c1f7e](https://github.com/sh4dow18/mateory-fsd/commit/32c1f7e9df3526c069801364b605ff76a39a6d94))
+* **queues:** add mm1-fifo-inf-inf model formulas ([652127a](https://github.com/sh4dow18/mateory-fsd/commit/652127a22176f6be8c562017e8c73baf7f48a637))
+* **queues:** add mm1-fifo-k-inf model formulas ([750750b](https://github.com/sh4dow18/mateory-fsd/commit/750750b515b479018ca5d32a072310f586cbab80))
+* **queues:** add mms-fifo-inf-inf model formulas ([0c39d37](https://github.com/sh4dow18/mateory-fsd/commit/0c39d37afb0c74a2f60d96417f5f056aeeff5d1c))
+* **queues:** add page ([d3e4e3f](https://github.com/sh4dow18/mateory-fsd/commit/d3e4e3faa2d8b5f42fa889487822c317d878ab01))
+* **queues:** add shared formulas between models ([de873f3](https://github.com/sh4dow18/mateory-fsd/commit/de873f3dd7963c219689faa0d95a5e191048e9e8))
+
 ## [0.2.0](https://github.com/sh4dow18/mateory-fsd/compare/v0.1.0...v0.2.0) (2025-11-06)
 
 
