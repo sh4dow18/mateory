@@ -12,18 +12,14 @@ export const CURRENCY_SYMBOL: Record<number, string> = {
   [CURRENCIES_IDS.dolar]: "$",
   [CURRENCIES_IDS.euro]: "€",
 };
+// Currencies Names Record
+const CURRENCIES_NAMES: Record<string, string> = {
+  [CURRENCIES_IDS.colon]: "Colón",
+  [CURRENCIES_IDS.dolar]: "Dolar",
+  [CURRENCIES_IDS.euro]: "Euro",
+};
 // Currencies List
-export const CURRENCIES_LIST: SelectOption[] = [
-  {
-    display: "Colón (₡)",
-    value: CURRENCIES_IDS.colon,
-  },
-  {
-    display: "Dólar ($)",
-    value: CURRENCIES_IDS.dolar,
-  },
-  {
-    display: "Euro (€)",
-    value: CURRENCIES_IDS.euro,
-  },
-];
+export const CURRENCIES_LIST: SelectOption[] = Object.values(CURRENCIES_IDS).map((id) => ({
+  display: `${CURRENCIES_NAMES[id]} (${CURRENCY_SYMBOL[id]})`,
+  value: id,
+}));

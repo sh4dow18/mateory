@@ -1,5 +1,5 @@
 // Get Fourth Time Interval Formula Test Suite Requirements
-import { GetFloatResult } from "../../shared";
+import { GetFloatResult } from "@/shared/lib";
 import { describe, expect, it } from "vitest";
 import { GetFourthTimeInterval } from "./get-fourth-time-interval";
 // Get Fourth Time Interval Formula Test Suite

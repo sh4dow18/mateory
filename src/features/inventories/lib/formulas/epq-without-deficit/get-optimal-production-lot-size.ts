@@ -1,6 +1,6 @@
 // Get Optimal Production Lot Size Requirements
 import { FormVariables } from "@/widgets/forms/config/form";
-import { GetFloatResult } from "../../shared";
+import { GetFloatResult } from "@/shared/lib";
 // Function that allows to Get the Optimal Production Lot Size
 export function GetOptimalProductionLotSize(params: FormVariables, settings: FormVariables) {
   const { demand, launchCost, inventoryHoldingCost, constantOutputRatio } = params;

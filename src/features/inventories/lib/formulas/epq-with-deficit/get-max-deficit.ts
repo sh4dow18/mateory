@@ -1,6 +1,6 @@
 // Get Max Deficit Requirements
 import { FormVariables } from "@/widgets/forms/config/form";
-import { GetFloatResult } from "../../shared";
+import { GetFloatResult } from "@/shared/lib";
 // Function that allows to Get the Max Deficit
 export function GetMaxDeficit(params: FormVariables, settings: FormVariables) {
   const { demand, inventoryHoldingCost, launchCost, constantOutputRatio, deficitCost } = params;

@@ -4,12 +4,16 @@ import { CalculateResults } from "./calculate-results";
 import { MODELS_IDS } from "../config";
 import { GetTotalDeficitCost } from "../lib/formulas/dispatchers";
 // Calculate Results Test Suite Mocks
+vi.mock("@/widgets/forms/config/form", () => ({
+  GetFormVariablesParams: vi.fn(() => ({
+    currency: 1,
+  })),
+}));
 vi.mock("../config", () => ({
   VARIABLES_LIST: [],
   MODELS_IDS: { epqWithoutDeficit: "epqWithoutDeficit", epqWithDeficit: "epqWithDeficit" },
-}));
-vi.mock("../config/results-settings", () => ({
-  RESULTS_SETTINGS_LIST: [],
+  RESULTS_CONFIG_LIST: [],
+  CURRENCY_SYMBOL: { 1: "₡" },
 }));
 vi.mock("@/shared/config/form", () => ({
   GetFormVariablesParams: vi.fn(() => ({ demand: 100 })),
@@ -24,15 +28,15 @@ vi.mock("../lib/formulas/dispatchers", () => ({
   GetFirstTimeInterval: vi.fn(() => 1),
   GetThirdTimeInterval: vi.fn(() => 3),
   GetFourthTimeInterval: vi.fn(() => 4),
-  GetTotalInventoryHoldingCost: vi.fn(() => ({ string: "$1,000.00" })),
-  GetTotalDeficitCost: vi.fn(() => ({ string: "$1,500.00" })),
+  GetTotalInventoryHoldingCost: vi.fn(() => 1000),
+  GetTotalDeficitCost: vi.fn(() => 1500),
 }));
 vi.mock("../lib/formulas/shared", () => ({
   GetFrequencyBetweenTwoProductionRuns: vi.fn(() => 0.2),
   GetTimeBetweenTwoProductionRuns: vi.fn(() => 5),
-  GetTotalProductionCost: vi.fn(() => ({ string: "$2,000.00" })),
-  GetTotalUnitProductionCost: vi.fn(() => ({ string: "$10.00" })),
-  GetTotalCost: vi.fn(() => "$3,510.00"),
+  GetTotalProductionCost: vi.fn(() => 2000),
+  GetTotalUnitProductionCost: vi.fn(() => 10),
+  GetTotalCost: vi.fn(() => 3510),
 }));
 // Calculate Results Test Suite
 describe("CalculateResults", () => {
@@ -59,11 +63,11 @@ describe("CalculateResults", () => {
       firstTimeInterval: 1,
       thirdTimeInterval: 3,
       fourthTimeInterval: 4,
-      totalInventoryHoldingCost: "$1,000.00",
-      totalDeficitCost: "$1,500.00",
-      totalProductionCost: "$2,000.00",
-      totalUnitProductionCost: "$10.00",
-      totalCost: "$3,510.00",
+      totalInventoryHoldingCost: "₡1,000.00",
+      totalDeficitCost: "₡1,500.00",
+      totalProductionCost: "₡2,000.00",
+      totalUnitProductionCost: "₡10.00",
+      totalCost: "₡3,510.00",
     });
   });
   // Test 2: Return undefined in total deficit cost if function return undefined

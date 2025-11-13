@@ -1,5 +1,5 @@
 // Get Cycle Time Length Ratio Formula Test Suite Requirements
-import { GetFloatResult } from "../../shared";
+import { GetFloatResult } from "@/shared/lib";
 import { describe, expect, it } from "vitest";
 import { GetCycleTimeLengthRatio } from "./get-cycle-time-length-ratio";
 // Get Cycle Time Length Ratio Formula Test Suite
