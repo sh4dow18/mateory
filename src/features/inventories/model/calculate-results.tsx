@@ -20,13 +20,15 @@ import {
   GetTotalProductionCost,
   GetTotalUnitProductionCost,
 } from "../lib/formulas/shared";
-import { VARIABLES_LIST } from "../config";
-import { RESULTS_CONFIG_LIST } from "@/widgets/forms/config/results-settings";
+import { RESULTS_CONFIG_LIST, VARIABLES_LIST } from "../config";
+import { GetCheckedValue } from "@/shared/lib";
+import { GetAccountNumber } from "../lib/shared";
 // Calculate Results Main Function
 export function CalculateResults(selectedModel: string, form: HTMLFormElement) {
   // Get every value from Form Variable
   const PARAMS = GetFormVariablesParams(form, VARIABLES_LIST, selectedModel);
   const SETTINGS = GetFormVariablesParams(form, RESULTS_CONFIG_LIST);
+  const { currency } = SETTINGS;
   // Get all results from producction and timing
   const OPTIMAL_PRODUCTION_LOT_SIZE = GetOptimalProductionLotSize(selectedModel, PARAMS, SETTINGS);
   const FREQUENCY_BETWEEN_TWO_PRODUCTION_RUNS = GetFrequencyBetweenTwoProductionRuns(
@@ -104,21 +106,21 @@ export function CalculateResults(selectedModel: string, form: HTMLFormElement) {
   );
   // Return all Results
   return {
-    optimalProductionLotSize: OPTIMAL_PRODUCTION_LOT_SIZE,
-    timeBetweenTwoProductionRuns: TIME_BETWEEN_TWO_PRODUCTION_RUNS,
-    frequencyBetweenTwoProductionRuns: FREQUENCY_BETWEEN_TWO_PRODUCTION_RUNS,
-    maxDeficit: MAX_DEFICIT,
-    maxInventoryLevel: MAX_INVENTORY_LEVEL,
-    firstTimeInterval: FIRST_TIME_INTERVAL,
-    secondTimeInterval: SECOND_TIME_INTERVAL,
-    thirdTimeInterval: THIRD_TIME_INTERVAL,
-    fourthTimeInterval: FOURTH_TIME_INTERVAL,
-    cycleTimeLengthRatio: CYCLE_TIME_LENGTH_RATIO,
-    reorderPoint: REORDER_POINT,
-    totalInventoryHoldingCost: TOTAL_INVENTORY_HOLDING_COST.string,
-    totalDeficitCost: TOTAL_DEFICIT_COST !== undefined ? TOTAL_DEFICIT_COST.string : undefined,
-    totalProductionCost: TOTAL_PRODUCTION_COST.string,
-    totalUnitProductionCost: TOTAL_UNIT_PRODUCTION_COST.string,
-    totalCost: TOTAL_COST,
+    optimalProductionLotSize: GetCheckedValue(OPTIMAL_PRODUCTION_LOT_SIZE),
+    timeBetweenTwoProductionRuns: GetCheckedValue(TIME_BETWEEN_TWO_PRODUCTION_RUNS),
+    frequencyBetweenTwoProductionRuns: GetCheckedValue(FREQUENCY_BETWEEN_TWO_PRODUCTION_RUNS),
+    maxDeficit: GetCheckedValue(MAX_DEFICIT),
+    maxInventoryLevel: GetCheckedValue(MAX_INVENTORY_LEVEL),
+    firstTimeInterval: GetCheckedValue(FIRST_TIME_INTERVAL),
+    secondTimeInterval: GetCheckedValue(SECOND_TIME_INTERVAL),
+    thirdTimeInterval: GetCheckedValue(THIRD_TIME_INTERVAL),
+    fourthTimeInterval: GetCheckedValue(FOURTH_TIME_INTERVAL),
+    cycleTimeLengthRatio: GetCheckedValue(CYCLE_TIME_LENGTH_RATIO),
+    reorderPoint: GetCheckedValue(REORDER_POINT),
+    totalInventoryHoldingCost: GetAccountNumber(currency, TOTAL_INVENTORY_HOLDING_COST),
+    totalDeficitCost: GetAccountNumber(currency, TOTAL_DEFICIT_COST),
+    totalProductionCost: GetAccountNumber(currency, TOTAL_PRODUCTION_COST),
+    totalUnitProductionCost: GetAccountNumber(currency, TOTAL_UNIT_PRODUCTION_COST),
+    totalCost: GetAccountNumber(currency, TOTAL_COST),
   };
 }

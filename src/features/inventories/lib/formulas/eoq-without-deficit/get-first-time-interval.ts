@@ -1,6 +1,6 @@
 // Get First Time Interval Requirements
 import { FormVariables } from "@/widgets/forms/config/form";
-import { GetFloatResult } from "../../shared";
+import { GetFloatResult } from "@/shared/lib";
 // Function that allows to Get the First Time Interval
 export function GetFirstTimeInterval(
   timeBetweenTwoProductionRuns: number,

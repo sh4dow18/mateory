@@ -1,6 +1,6 @@
 // Inventories Variables Requirements
 import { Variable } from "@/shared/config/variables";
-import { GetDisabledInventoryModels } from "./models";
+import { GetDisabledInventoryModels, MODELS_IDS } from "./models";
 // Inventories Variables List
 export const VARIABLES_LIST: Variable[] = [
   {
@@ -50,6 +50,6 @@ export const VARIABLES_LIST: Variable[] = [
     example: "2",
     id: "replenishmentTime",
     validation: "number",
-    disabledInModels: GetDisabledInventoryModels("eoq-without-deficit", "different"),
+    disabledInModels: GetDisabledInventoryModels(MODELS_IDS.eoqWithoutDeficit, "different"),
   },
 ];

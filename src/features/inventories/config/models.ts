@@ -7,26 +7,19 @@ export const MODELS_IDS = {
   eoqWithoutDeficit: "eoq-without-deficit",
   eoqWithDeficit: "eoq-with-deficit",
 };
+// Models Names Record
+const MODELS_NAMES: Record<string, string> = {
+  [MODELS_IDS.epqWithoutDeficit]: "EPQ sin Déficit",
+  [MODELS_IDS.epqWithDeficit]: "EPQ con Déficit",
+  [MODELS_IDS.eoqWithoutDeficit]: "EOQ sin Déficit",
+  [MODELS_IDS.eoqWithDeficit]: "EOQ con Déficit",
+};
 // Get Disabled Inventory Models
 export const GetDisabledInventoryModels = (filter: string, mode: ModelFilterMode) => {
   return GetDisabledModels(MODELS_LIST, filter, mode);
 };
 // Inventories Models List
-export const MODELS_LIST: Model[] = [
-  {
-    id: MODELS_IDS.epqWithoutDeficit,
-    name: "EPQ sin Déficit",
-  },
-  {
-    id: MODELS_IDS.epqWithDeficit,
-    name: "EPQ con Déficit",
-  },
-  {
-    id: MODELS_IDS.eoqWithoutDeficit,
-    name: "EOQ sin Déficit",
-  },
-  {
-    id: MODELS_IDS.eoqWithDeficit,
-    name: "EOQ con Déficit",
-  },
-];
+export const MODELS_LIST: Model[] = Object.values(MODELS_IDS).map((model) => ({
+  id: model,
+  name: MODELS_NAMES[model],
+}));

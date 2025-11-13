@@ -1,6 +1,6 @@
 // Get Third Time Interval Requirements
 import { FormVariables } from "@/widgets/forms/config/form";
-import { GetFloatResult } from "../../shared";
+import { GetFloatResult } from "@/shared/lib";
 // Function that allows to Get the Third Time Interval
 export function GetThirdTimeInterval(params: FormVariables, settings: FormVariables) {
   const { inventoryHoldingCost, launchCost, demand, constantOutputRatio, deficitCost } = params;

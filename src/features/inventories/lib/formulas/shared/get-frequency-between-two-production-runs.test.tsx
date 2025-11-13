@@ -1,5 +1,5 @@
 // Get Frequency Between Two Production Runs Formula Test Suite Requirements
-import { GetFloatResult } from "../../shared";
+import { GetFloatResult } from "@/shared/lib";
 import { describe, expect, it } from "vitest";
 import { GetFrequencyBetweenTwoProductionRuns } from "./get-frequency-between-two-production-runs";
 // Get Frequency Between Two Production Runs Formula Test Suite

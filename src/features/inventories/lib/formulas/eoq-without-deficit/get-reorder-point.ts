@@ -1,6 +1,6 @@
 // Get Reorder Point Requirements
 import { FormVariables } from "@/widgets/forms/config/form";
-import { GetFloatResult } from "../../shared";
+import { GetFloatResult } from "@/shared/lib";
 // Function that allows to Get the Reorder Point
 export function GetReorderPoint(
   optimalProductionLotSize: number,
