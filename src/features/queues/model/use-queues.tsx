@@ -19,8 +19,10 @@ function useQueues() {
   const onSubmitForm = (event: FormEvent<HTMLFormElement>) => {
     // Avoid refreshing the page
     event.preventDefault();
+    // Get the entire form as a variable
+    const FORM = event.target as HTMLFormElement;
     // Get the Results
-    const RESULTS = CalculateResults(selectedModel);
+    const RESULTS = CalculateResults(selectedModel, FORM);
     // Set Results in Page
     setResults(RESULTS);
   };
