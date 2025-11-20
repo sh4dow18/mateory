@@ -41,14 +41,6 @@ export const ROUTES_LIST: Route[] = [
     inHome: true,
   },
   {
-    path: "formulas",
-    title: "Fórmulas",
-    summary: "Consulta las fórmulas y modelos matemáticos utilizados en cada cálculo.",
-    Icon: FaBook,
-    inSitemap: true,
-    inHome: true,
-  },
-  {
     path: "getting-started",
     title: "¿Cómo funciona?",
     summary: "Aprende a utilizar Mateory paso a paso con una guía clara y sencilla.",
