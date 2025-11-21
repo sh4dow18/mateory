@@ -1,6 +1,6 @@
 {
   "name": "mateory-fsd",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
@@ -10,8 +10,7 @@
     "lint": "eslint \"src/**/*.{ts,tsx,js,jsx}\" --fix",
     "test": "vitest run --passWithNoTests",
     "test:watch": "vitest --passWithNoTests",
-    "sonar": "sonar-scanner -Dsonar.host.url=http://localhost:9000 -Dsonar.token=$SONAR_TOKEN",
-    "release": "standard-version"
+    "sonar": "sonar-scanner -Dsonar.host.url=http://localhost:9000 -Dsonar.token=$SONAR_TOKEN"
   },
   "dependencies": {
     "next": "15.5.4",

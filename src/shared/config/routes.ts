@@ -1,6 +1,6 @@
 // Routes Requirements
 import { IconType } from "react-icons";
-import { FaBook, FaBox, FaClock, FaHome, FaInfoCircle } from "react-icons/fa";
+import { FaBox, FaClock, FaHome, FaInfoCircle } from "react-icons/fa";
 import { IoMdHelpCircle } from "react-icons/io";
 // Route Type
 type Route = {
@@ -41,14 +41,6 @@ export const ROUTES_LIST: Route[] = [
     inHome: true,
   },
   {
-    path: "formulas",
-    title: "Fórmulas",
-    summary: "Consulta las fórmulas y modelos matemáticos utilizados en cada cálculo.",
-    Icon: FaBook,
-    inSitemap: true,
-    inHome: true,
-  },
-  {
     path: "getting-started",
     title: "¿Cómo funciona?",
     summary: "Aprende a utilizar Mateory paso a paso con una guía clara y sencilla.",
@@ -57,7 +49,7 @@ export const ROUTES_LIST: Route[] = [
     inHome: true,
   },
   {
-    path: "help",
+    path: "about",
     title: "Información",
     summary: "Página de Información y Colaboradores de Mateory",
     Icon: FaInfoCircle,

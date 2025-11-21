@@ -1,10 +1,11 @@
 // Card Requirements
 import React from "react";
 import Link from "next/link";
+import { LinkType } from "../config/links";
 // Card Props
 interface Props {
   readonly children: React.ReactNode;
-  readonly link?: string;
+  readonly link?: LinkType;
   readonly colored?: boolean;
 }
 // Card Main Function
@@ -21,7 +22,11 @@ function Card({ children, link, colored }: Props) {
     `border border-primary/30 rounded-2xl p-6 space-y-6 high-contrast:border-primary ${COLORED_CLASS} ${LINK_CLASS}`.trimEnd();
   // Return Card Component
   return link ? (
-    <Link href={`/${link}`} className={CLASSES}>
+    <Link
+      href={link.href.startsWith("http") ? link.href : `/${link.href}`}
+      target={link.newTab ? "_blank" : undefined}
+      className={CLASSES}
+    >
       {children}
     </Link>
   ) : (
