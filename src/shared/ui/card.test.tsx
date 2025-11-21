@@ -17,7 +17,7 @@ describe("Card", () => {
   // Test 2: Renders a Card as Next.js Link
   it("renders as a Next.js Link when 'link' is provided", () => {
     // Mounts component in Fake DOM
-    render(<Card link="test">Enlace de prueba</Card>);
+    render(<Card link={{ href: "link" }}>Enlace de prueba</Card>);
     // Get Link
     const LINK = screen.getByText("Enlace de prueba").closest("a");
     // Check if the card is a a element that it is the Next.js Link

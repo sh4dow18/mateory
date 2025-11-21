@@ -1,9 +1,8 @@
 // Home Page Main Component Requirements
 import { ROUTES_LIST, ROUTES_MAP } from "@/shared/config/routes";
-import { Card, PageTitle } from "@/shared/ui";
+import { Card, PageTitle, SummaryCard } from "@/shared/ui";
 import Link from "next/link";
 import { RiInformationFill } from "react-icons/ri";
-import { SummaryCard } from "./ui";
 import { BENEFITS_LIST } from "./config";
 // Home Page Main Component Main Function
 function HomePage() {
@@ -18,7 +17,9 @@ function HomePage() {
             Icon={page.Icon}
             title={page.title}
             summary={page.summary}
-            link={page.path}
+            link={{
+              href: page.path,
+            }}
           />
         ))}
       </div>
