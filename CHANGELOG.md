@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.4.0](https://github.com/sh4dow18/mateory-fsd/compare/v0.3.0...v0.4.0) (2025-11-21)
+
+
+### Features
+
+* **about:** add page ([e2bddb8](https://github.com/sh4dow18/mateory-fsd/commit/e2bddb8e6d5ac3df59c4513e00f14d438cffa55a))
+
+
+### Bug Fixes
+
+* remove formulas page to add it in future ([a3174ea](https://github.com/sh4dow18/mateory-fsd/commit/a3174ea0fcc63647f265f706deb3254d7a57fe1f))
+
 ## [0.3.0](https://github.com/sh4dow18/mateory-fsd/compare/v0.2.0...v0.3.0) (2025-11-13)
 
 
