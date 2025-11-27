@@ -1,6 +1,6 @@
 {
   "name": "mateory-fsd",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "private": true,
   "scripts": {
     "init": "npm install && npm audit fix && npx husky install",

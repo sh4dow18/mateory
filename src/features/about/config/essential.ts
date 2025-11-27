@@ -24,13 +24,13 @@ export const ESSENTIAL_INFORMATION_LIST: EssentialInformation[] = [
   {
     id: 2,
     title: "Versión",
-    summary: "0.4.0",
+    summary: "0.5.0",
     icon: FaGithub,
   },
   {
     id: 3,
     title: "Realizado",
-    summary: "21 de Noviembre del 2025",
+    summary: "27 de Noviembre del 2025",
     icon: FaClockRotateLeft,
   },
   {

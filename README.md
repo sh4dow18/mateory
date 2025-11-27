@@ -1,9 +1,13 @@
 # Mateory
 
-[![Version](https://img.shields.io/badge/version-0.4.0-00AA00?style=for-the-badge&logo=github&labelColor=gray)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.5.0-00AA00?style=for-the-badge&logo=github&labelColor=gray)](CHANGELOG.md)
 [![License](https://img.shields.io/badge/license-MIT-0066AA?style=for-the-badge&labelColor=gray)](LICENSE)
 [![CI-CD](https://img.shields.io/github/actions/workflow/status/sh4dow18/mateory-fsd/ci-cd.yml?style=for-the-badge&label=CI-CD&labelColor=gray&logo=vercel&labelColor=white)](https://github.com/sh4dow18/mateory-fsd/actions)
 [![Storybook](https://img.shields.io/badge/docs-Storybook-ff4785?style=for-the-badge&labelColor=gray&logo=storybook)](https://ramses-solano.vercel.app/mateory)
+![Issues](https://img.shields.io/badge/open%20issues-0-0c5db5?style=for-the-badge&labelColor=gray&logo=sonar)
+![Coverage](https://img.shields.io/badge/test%20coverage-89.6%25-0c5db5?style=for-the-badge&labelColor=gray&logo=sonar)
+![Duplications](https://img.shields.io/badge/duplications-0%25-0c5db5?style=for-the-badge&labelColor=gray&logo=sonar)
+![Hostposts](https://img.shields.io/badge/hostposts-0-0c5db5?style=for-the-badge&labelColor=gray&logo=sonar)
 
 **Mateory** is a web tool that helps solve easy problems of math theories, such as **Inventory Theories** and
 **Queuing Theories**, with a few clicks, taking pre-existing mathematical models, such as the **EOQ with deficit**
@@ -13,7 +17,7 @@ model for inventories or the **M/M/1:FIFO/∞/∞** for queues
 
 ## Project Status
 
-**Version 0.4.0**. See [`CHANGELOG.md`](CHANGELOG.md) for version history.
+**Version 0.5.0**. See [`CHANGELOG.md`](CHANGELOG.md) for version history.
 
 ---
 
@@ -22,8 +26,8 @@ model for inventories or the **M/M/1:FIFO/∞/∞** for queues
 Clone the repository:
 
 ```
-git clone https://github.com/sh4dow18/mateory-fsd.git
-cd mateory-fsd
+git clone https://github.com/sh4dow18/mateory.git
+cd mateory
 ```
 
 Install dependencies:
@@ -58,6 +62,14 @@ yarn dev
 ---
 
 ## Usage / Quick Examples
+
+**Init Project**
+
+```
+npm run init
+```
+
+Runs `npm install`, `npm audit fix` and `npx husky install`
 
 **Run dev server**
 
@@ -113,23 +125,34 @@ npm run lint
 npm run format
 ```
 
+**Vitest creates Coverage Report**
+
+```
+npm run coverage
+```
+
+**Run SonarQube**
+
+```
+npm run sonar
+```
+
 ---
 
 ## Recommended Repository Structure
 
-[**Feature-Sliced Design Architecture**](https://feature-sliced.design)
+Frontend: [**Feature-Sliced Design Architecture**](https://feature-sliced.design)
 
 ```
 src/
  ├─ app/
  ├─ features/
- │   └─ inventory/
- │       ├─ InventoryPage.tsx   -> Main Feature Page
- │       ├─ ui/                 -> UI Components
- │       ├─ model/              -> States, hooks, business layer
+ │   └─ inventories/
  │       ├─ config/             -> Settings
- │       ├─ lib/                -> utils, services, helpers (local)
- │       └─ api/                -> utils, services, helpers (from API)
+ │       ├─ lib/                -> utils, services, helpers
+ │       ├─ model/              -> States, hooks, business layer
+ │       ├─ ui/                 -> UI Components
+ │       └─ InventoryPage.tsx   -> Main Feature Page
  ├─ shared/                     -> Generic and reusable Stuff
  |    ├─ ui/
  |    ...
@@ -140,6 +163,24 @@ src/
      ...
 ```
 
+Backend: [**Layered Architecture**](https://dev.to/yasmine_ddec94f4d4/understanding-the-layered-architecture-pattern-a-comprehensive-guide-1e2j)
+
+```
+src/
+ ├─ app/
+ │   └─ api/
+ │      ├─ emails
+ │      |   ├─ report-bug
+ |      |   |  └─ route.ts      -> Controller
+ |      |   ...
+ |      ...
+ ├─ emails/                     -> React Email Templates
+ ├─ modules/
+ │   ├─ emails/
+ │   |  └─ services
+ |   ...
+```
+
 ---
 
 ## Roadmap
@@ -147,9 +188,9 @@ src/
 | Estado | Tarea                              |
 | ------ | ---------------------------------- |
 | ✅     | Initialize project                 |
-| X      | Migrate to feature-based structure |
+| ✅     | Migrate to feature-based structure |
 | X      | Add Storybook and first stories    |
-| X      | Deploy Storybook for portfolio     |
+| X      | Add Formulas Information Page      |
 
 ---
 
