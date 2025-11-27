@@ -2,8 +2,7 @@
 "use client";
 // Use Input Hook Requirements
 import { ChangeEvent, useState } from "react";
-import { InputStatus } from "../config/input";
-import { VALIDATION_REGEX } from "@/shared/config/variables";
+import { INPUT_VALIDATION_REGEX, InputStatus } from "../config/input";
 // Use Input Hook Main Function
 function useInput(validation: string) {
   // Use Input Hook Main Hooks
@@ -19,7 +18,7 @@ function useInput(validation: string) {
     // If is not empty, check if it is valid
     else {
       // If Value is Valid, set Valid
-      if (VALIDATION_REGEX[validation].test(VALUE)) {
+      if (INPUT_VALIDATION_REGEX[validation].test(VALUE)) {
         setStatus("Valid");
         return;
       }
@@ -27,6 +26,7 @@ function useInput(validation: string) {
       setStatus("Invalid");
     }
   };
+  // Return Hook Values
   return { status, onChange };
 }
 
