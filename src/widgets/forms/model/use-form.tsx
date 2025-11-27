@@ -1,9 +1,16 @@
 // Set this hook as a client hook
 "use client";
 // Use Form Hook Requirements
-import { useEffect, useRef } from "react";
+import { FormEvent, useEffect, useRef } from "react";
+import { OnSubmitType } from "../config/form";
+import { AlertSettings } from "../config/alert";
 // Use Form Hook Main Function
-function useForm(id: string) {
+function useForm(
+  id: string,
+  onSubmit: OnSubmitType,
+  UpdateAlertSettings: (newSettings: AlertSettings) => void,
+  successAlertMessage: string,
+) {
   // Use Form Hook Main Hooks
   const FORM_REFERENCE = useRef<HTMLFormElement | null>(null);
   // useEffect that will be executed when page is loading
@@ -64,8 +71,42 @@ function useForm(id: string) {
       ARIA_INVALID_OBSERVER.disconnect();
     };
   }, [id]);
+  // Form on Submit complete function
+  const onSubmitComplete = async (event: FormEvent<HTMLFormElement>) => {
+    // Avoid refreshing the page
+    event.preventDefault();
+    // Set Loading Alert Settings
+    UpdateAlertSettings({
+      isOpen: true,
+      title: "Cargando",
+      message: "Procesando...",
+      type: "loading",
+    });
+    // Execute the on Submit Sent
+    const RESPONSE = await onSubmit(event);
+    // Check if the Response is an API Response
+    if (RESPONSE instanceof Response) {
+      // Get Ok Value
+      const OK = RESPONSE.ok;
+      // Update Alert Settings according Response
+      UpdateAlertSettings({
+        isOpen: true,
+        title: OK ? "Éxito" : "Error",
+        message: OK ? successAlertMessage : (await RESPONSE.json()).error,
+        type: OK ? "success" : "error",
+      });
+      return;
+    }
+    // Set Successful Alert Settings
+    UpdateAlertSettings({
+      isOpen: true,
+      title: "Éxito",
+      message: successAlertMessage,
+      type: "success",
+    });
+  };
   // Return Hook Values
-  return { reference: FORM_REFERENCE };
+  return { reference: FORM_REFERENCE, onSubmitComplete };
 }
 
 export default useForm;

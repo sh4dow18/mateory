@@ -141,7 +141,15 @@ export SONAR_TOKEN=<your_token>
 set -x SONAR_TOKEN <your_token>
 ```
 
-3. Run the analysis:
+3. Rewrite Coverage Report
+
+```
+npm run coverage
+```
+
+- This will help to sonar to know how much coverage testing is in this project by creating a coverage folder with a report
+
+4. Run the analysis:
 
 ```
 npm run sonar

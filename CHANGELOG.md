@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.5.0](https://github.com/sh4dow18/mateory-fsd/compare/v0.4.0...v0.5.0) (2025-11-27)
+
+
+### Features
+
+* **inventories:** add alerts when form is submitted ([1460288](https://github.com/sh4dow18/mateory-fsd/commit/1460288b160c10f4299faf17d34eb04be1a3d156))
+* **queues:** add alerts when form is submitted ([e086443](https://github.com/sh4dow18/mateory-fsd/commit/e086443ff13dc5fcdef1ae3a8ddb2291921a8699))
+* **report-bug:** add page ([fcace5a](https://github.com/sh4dow18/mateory-fsd/commit/fcace5a637d163cb609562c8d5793a12abbea8bc))
+* **report-bug:** add send report bug email ([440f35a](https://github.com/sh4dow18/mateory-fsd/commit/440f35a2f23605673b2d7f234b0ecd4efbdc0459))
+
 ## [0.4.0](https://github.com/sh4dow18/mateory-fsd/compare/v0.3.0...v0.4.0) (2025-11-21)
 
 

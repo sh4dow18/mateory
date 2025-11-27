@@ -2,6 +2,7 @@
 import { IconType } from "react-icons";
 import { CgBrowser } from "react-icons/cg";
 import { GrDeploy } from "react-icons/gr";
+import { MdEmail } from "react-icons/md";
 // Stack Types
 type Stack = {
   id: number;
@@ -22,5 +23,11 @@ export const STACK_LIST: Stack[] = [
     title: "Despliegue",
     summary: "Vercel",
     icon: GrDeploy,
+  },
+  {
+    id: 3,
+    title: "Correos Electrónicos",
+    summary: "Next.JS, Nodemailer, React Email y Typescript",
+    icon: MdEmail,
   },
 ];

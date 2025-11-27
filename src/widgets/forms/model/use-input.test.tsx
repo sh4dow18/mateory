@@ -4,7 +4,7 @@ import { describe, it, expect, vi } from "vitest";
 import useInput from "./use-input";
 // Use Input Hook Test Suite Mocks
 vi.mock("@/shared/config/variables", () => ({
-  VALIDATION_REGEX: {
+  VARIABLE_VALIDATION_REGEX: {
     email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
     number: /^[0-9]+$/,
   },

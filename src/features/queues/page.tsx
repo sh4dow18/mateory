@@ -27,8 +27,9 @@ function QueuesPage() {
       resultsConfigList={RESULTS_CONFIG_LIST}
       resultsList={RESULTS_LIST}
       resultsValues={results}
-      updateSelectedModel={UpdateSelectedModel}
+      UpdateSelectedModel={UpdateSelectedModel}
       onSubmitForm={onSubmitForm}
+      successAlertMessage="Problema Solucionado"
       classNames={{
         modelsSection: "grid grid-cols-1 gap-3 min-[425px]:grid-cols-2 md:grid-cols-3",
         variablesSection:

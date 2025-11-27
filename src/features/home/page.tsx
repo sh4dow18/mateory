@@ -1,7 +1,6 @@
 // Home Page Main Component Requirements
 import { ROUTES_LIST, ROUTES_MAP } from "@/shared/config/routes";
-import { Card, PageTitle, SummaryCard } from "@/shared/ui";
-import Link from "next/link";
+import { Card, PageTitle, RedirectSection, SummaryCard } from "@/shared/ui";
 import { RiInformationFill } from "react-icons/ri";
 import { BENEFITS_LIST } from "./config";
 // Home Page Main Component Main Function
@@ -49,16 +48,14 @@ function HomePage() {
         </div>
       </Card>
       {/* Home Page Information Section */}
-      <section className="flex flex-col gap-1 text-gray-600 justify-self-center text-center dark:text-gray-400 high-contrast:text-black font-small:text-sm font-large:text-lg font-xlarge:text-xl md:flex-row md:text-left">
-        <RiInformationFill className="w-6 h-6 mx-auto md:mx-0" />
-        <p>¿Quieres conocer más sobre Mateory? </p>
-        <Link
-          href="/about"
-          className="text-primary font-medium hover:underline dark:text-primary-light"
-        >
-          Visita la sección de Información
-        </Link>
-      </section>
+      <RedirectSection
+        Icon={RiInformationFill}
+        message="¿Quiere conocer más sobre Mateory?"
+        link={{
+          href: "/about",
+          message: "Visita la sección de Información",
+        }}
+      />
     </>
   );
 }

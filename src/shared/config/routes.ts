@@ -1,7 +1,7 @@
 // Routes Requirements
 import { IconType } from "react-icons";
 import { FaBox, FaClock, FaHome, FaInfoCircle } from "react-icons/fa";
-import { IoMdHelpCircle } from "react-icons/io";
+import { MdReportProblem } from "react-icons/md";
 // Route Type
 type Route = {
   readonly path: string;
@@ -41,11 +41,11 @@ export const ROUTES_LIST: Route[] = [
     inHome: true,
   },
   {
-    path: "getting-started",
-    title: "¿Cómo funciona?",
-    summary: "Aprende a utilizar Mateory paso a paso con una guía clara y sencilla.",
-    Icon: IoMdHelpCircle,
-    inSitemap: true,
+    path: "report-bug",
+    title: "Reportar Problema",
+    summary: "Ayuda a tener el sistema al día reportando los problemas que encuentre en Mateory.",
+    Icon: MdReportProblem,
+    inSitemap: false,
     inHome: true,
   },
   {

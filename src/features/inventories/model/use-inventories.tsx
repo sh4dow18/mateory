@@ -19,8 +19,6 @@ function useInventories() {
   // Use Inventories Main Functions
   const UpdateSelectedModel = (newSelectedModel: string) => setSelectedModel(newSelectedModel);
   const onSubmitForm = (event: FormEvent<HTMLFormElement>) => {
-    // Avoid refreshing the page
-    event.preventDefault();
     // Get the entire form as a variable
     const FORM = event.target as HTMLFormElement;
     // Get the Results

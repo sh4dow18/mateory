@@ -19,8 +19,9 @@ interface Props {
   readonly resultsConfigList: ResultConfig[];
   readonly resultsList: Result[];
   readonly resultsValues: ResultsValues;
-  readonly updateSelectedModel: (model: string) => void;
+  readonly UpdateSelectedModel: (model: string) => void;
   readonly onSubmitForm: (event: FormEvent<HTMLFormElement>) => void;
+  readonly successAlertMessage: string;
   readonly classNames?: {
     modelsSection?: string;
     variablesSection?: string;
@@ -38,14 +39,20 @@ function CalculationSection({
   resultsConfigList,
   resultsList,
   resultsValues,
-  updateSelectedModel,
+  UpdateSelectedModel,
   onSubmitForm,
+  successAlertMessage,
   classNames,
 }: Props) {
   return (
     <>
       <PageTitle title={title} summary={summary} />
-      <Form id="variables-form" onSubmit={onSubmitForm} className="space-y-8">
+      <Form
+        id="variables-form"
+        onSubmit={onSubmitForm}
+        className="space-y-8"
+        successAlertMessage={successAlertMessage}
+      >
         {/* Available Models Section Card */}
         <SectionCard title="Modelos Disponibles" className={classNames?.modelsSection}>
           {modelsList.map((model) => (
@@ -53,7 +60,7 @@ function CalculationSection({
               key={model.id}
               label={model.name}
               selected={selectedModel === model.id}
-              onClick={() => updateSelectedModel(model.id)}
+              onClick={() => UpdateSelectedModel(model.id)}
             />
           ))}
         </SectionCard>

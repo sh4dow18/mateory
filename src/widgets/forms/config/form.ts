@@ -1,5 +1,10 @@
-// Form Variables Object Type
+// Form Config Requirements
+import { FormEvent } from "react";
+// Form Config Types
 export type FormVariables = Record<string, number>;
+export type NormalOnSubmitType = (event: FormEvent<HTMLFormElement>) => void;
+export type PromiseOnSubmitType = (event: FormEvent<HTMLFormElement>) => Promise<Response>;
+export type OnSubmitType = NormalOnSubmitType | PromiseOnSubmitType;
 // Function that allows to get automatically variables from form
 export function GetFormVariablesParams(
   form: HTMLFormElement,

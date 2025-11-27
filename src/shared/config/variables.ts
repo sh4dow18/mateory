@@ -8,7 +8,7 @@ export type Variable = {
 };
 export type VariableValidation = "number" | "1-to-9";
 // Variable Regular Expressions to use in Validations
-export const VALIDATION_REGEX: Record<string, RegExp> = {
+export const VARIABLE_VALIDATION_REGEX: Record<string, RegExp> = {
   // Only Positive Numbers
   // Example: 8000 or 9502.43
   number: /^\d+(\.\d+)?$/,
