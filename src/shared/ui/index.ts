@@ -4,6 +4,7 @@ export { default as Footer } from "./footer";
 export { default as Header } from "./header";
 export { default as ModelButton } from "./model-button";
 export { default as PageTitle } from "./page-title";
+export { default as RedirectSection } from "./redirect-section";
 export { default as ResultCard } from "./result-card";
 export { default as SectionCard } from "./section-card";
 export { default as SummaryCard } from "./summary-card";

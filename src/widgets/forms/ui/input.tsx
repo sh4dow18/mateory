@@ -3,7 +3,7 @@
 // Input Requirements
 import React from "react";
 import { Card } from "@/shared/ui";
-import { HELP_MESSAGE } from "../config/input";
+import { HELP_MESSAGE, InputValidation } from "../config/input";
 import { useInput } from "../model";
 import InputIcon from "./input-icon";
 import { VariableValidation } from "@/shared/config/variables";
@@ -12,7 +12,7 @@ interface Props {
   readonly label: string;
   readonly example: string;
   readonly name: string;
-  readonly validation: VariableValidation;
+  readonly validation: InputValidation | VariableValidation;
   readonly disabled?: boolean;
   readonly autoComplete?: string;
   readonly maxLength?: number;
