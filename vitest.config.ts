@@ -10,6 +10,12 @@ export default defineConfig({
     environment: "jsdom",
     // File that runs before each test suite, for loading global configurations, mocks or extensions
     setupFiles: "./tests/setup.ts",
+    // Creates a Coverage Report to SonarQube
+    coverage: {
+      provider: "v8",
+      reporter: ["lcov"],
+      reportsDirectory: "./coverage",
+    },
   },
   resolve: {
     alias: {
