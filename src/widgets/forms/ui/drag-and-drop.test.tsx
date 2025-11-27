@@ -48,7 +48,6 @@ describe("DragAndDrop Component", () => {
     if (!CONTAINER) {
       throw new Error("Container is Null");
     }
-    screen.debug(CONTAINER);
     // Get all functions from hook
     const { onClick, onDragOver, onDragLeave, onDrop } = MOCK_USE_DRAG_AND_DROP_RETURN;
     // Simulate Click and Check if the onClick function was called
