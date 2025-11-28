@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "init": "npm install && npm audit fix && npx husky install",
-    "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
+    "dev": "next dev",
+    "build": "next build",
     "start": "next start",
     "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css,md}\"",
     "lint": "eslint \"src/**/*.{ts,tsx,js,jsx}\" --fix",
