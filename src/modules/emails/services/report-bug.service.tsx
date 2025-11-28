@@ -32,7 +32,8 @@ export async function ReportBug(request: Request) {
   // Get HTML From React Email Template
   const HTML = await render(<ReportBugEmail name={NAME} email={EMAIL} message={MESSAGE} />);
   // Send Email
-  SendEmail("Problema Reportado en Mateory", HTML, FILES);
+  const RESULT = await SendEmail("Problema Reportado en Mateory", HTML, FILES);
+  console.log("MAIL RESULT:", RESULT);
   // Return the Email Response
   return NextResponse.json({ message: "Reporte Realizado con Éxito" }, { status: 200 });
 }
