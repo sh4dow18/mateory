@@ -1,11 +1,11 @@
 # Mateory
 
-[![Version](https://img.shields.io/badge/version-0.5.0-00AA00?style=for-the-badge&logo=github&labelColor=gray)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.5.1-00AA00?style=for-the-badge&logo=github&labelColor=gray)](CHANGELOG.md)
 [![License](https://img.shields.io/badge/license-MIT-0066AA?style=for-the-badge&labelColor=gray)](LICENSE)
 [![CI-CD](https://img.shields.io/github/actions/workflow/status/sh4dow18/mateory-fsd/ci-cd.yml?style=for-the-badge&label=CI-CD&labelColor=gray&logo=vercel&labelColor=white)](https://github.com/sh4dow18/mateory-fsd/actions)
 [![Storybook](https://img.shields.io/badge/docs-Storybook-ff4785?style=for-the-badge&labelColor=gray&logo=storybook)](https://ramses-solano.vercel.app/mateory)
 ![Issues](https://img.shields.io/badge/open%20issues-0-0c5db5?style=for-the-badge&labelColor=gray&logo=sonar)
-![Coverage](https://img.shields.io/badge/test%20coverage-89.6%25-0c5db5?style=for-the-badge&labelColor=gray&logo=sonar)
+![Coverage](https://img.shields.io/badge/test%20coverage-92.2%25-0c5db5?style=for-the-badge&labelColor=gray&logo=sonar)
 ![Duplications](https://img.shields.io/badge/duplications-0%25-0c5db5?style=for-the-badge&labelColor=gray&logo=sonar)
 ![Hostposts](https://img.shields.io/badge/hostposts-0-0c5db5?style=for-the-badge&labelColor=gray&logo=sonar)
 
@@ -17,7 +17,7 @@ model for inventories or the **M/M/1:FIFO/∞/∞** for queues
 
 ## Project Status
 
-**Version 0.5.0**. See [`CHANGELOG.md`](CHANGELOG.md) for version history.
+**Version 0.5.1**. See [`CHANGELOG.md`](CHANGELOG.md) for version history.
 
 ---
 
@@ -58,6 +58,8 @@ yarn dev
 | Storybook                       | Component documentation     |
 | Vitest / Jest + Testing Library | Testing                     |
 | ESLint + Prettier               | Code quality and formatting |
+| Nodemailer                      | Send Emails                 |
+| React Email                     | Email Templates             |
 
 ---
 
