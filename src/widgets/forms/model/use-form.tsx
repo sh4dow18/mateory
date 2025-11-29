@@ -75,6 +75,12 @@ function useForm(
   const onSubmitComplete = async (event: FormEvent<HTMLFormElement>) => {
     // Avoid refreshing the page
     event.preventDefault();
+    //
+    document.dispatchEvent(
+      new CustomEvent("formSubmittingChange", {
+        detail: { formId: id, isSubmitting: true },
+      }),
+    );
     // Set Loading Alert Settings
     UpdateAlertSettings({
       isOpen: true,
@@ -95,15 +101,23 @@ function useForm(
         message: OK ? successAlertMessage : (await RESPONSE.json()).error,
         type: OK ? "success" : "error",
       });
-      return;
     }
-    // Set Successful Alert Settings
-    UpdateAlertSettings({
-      isOpen: true,
-      title: "Éxito",
-      message: successAlertMessage,
-      type: "success",
-    });
+    // If not, means that is is a Normal Submit
+    else {
+      // Set Successful Alert Settings
+      UpdateAlertSettings({
+        isOpen: true,
+        title: "Éxito",
+        message: successAlertMessage,
+        type: "success",
+      });
+    }
+    //
+    document.dispatchEvent(
+      new CustomEvent("formSubmittingChange", {
+        detail: { formId: id, isSubmitting: false },
+      }),
+    );
   };
   // Return Hook Values
   return { reference: FORM_REFERENCE, onSubmitComplete };
