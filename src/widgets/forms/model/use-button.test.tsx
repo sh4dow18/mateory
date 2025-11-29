@@ -75,4 +75,30 @@ describe("useFormButton", () => {
     // Check if disabled is now true
     expect(result.current.disabled).toBe(true);
   });
+  // Test 5: Disable the button again when the form is submitting
+  it("disable the button again when the form is submitting", () => {
+    const { result } = renderHook(() => useButton("form1"));
+    // Use Hook values that has to wait to check
+    act(() => {
+      // Dispatch Custom Event with mock values that Use Form Button Check
+      document.dispatchEvent(
+        new CustomEvent("formSubmittingChange", {
+          detail: { formId: "form1", isSubmitting: true },
+        }),
+      );
+    });
+    // Check if disabled is now false
+    expect(result.current.disabled).toBe(true);
+    // Use Hook values that has to wait to check
+    act(() => {
+      // Dispatch Custom Event with mock values that Use Form Button Check
+      document.dispatchEvent(
+        new CustomEvent("formSubmittingChange", {
+          detail: { formId: "form1", isSubmitting: false },
+        }),
+      );
+    });
+    // Check if disabled is now true
+    expect(result.current.disabled).toBe(false);
+  });
 });

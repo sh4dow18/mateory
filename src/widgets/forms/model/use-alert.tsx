@@ -8,11 +8,7 @@ function useAlert() {
   // Use Alert Hook Main Hooks
   const [settings, setSettings] = useState<AlertSettings>(DEFAULT_ALERT_SETTINGS);
   // Alert on Click Function
-  const onClick = () =>
-    setSettings({
-      ...DEFAULT_ALERT_SETTINGS,
-      isOpen: false,
-    });
+  const onClick = () => setSettings(DEFAULT_ALERT_SETTINGS);
   // Function that allows to update alert settings
   const UpdateSettings = (newSettings: AlertSettings) => setSettings(newSettings);
   // Return Hook Values

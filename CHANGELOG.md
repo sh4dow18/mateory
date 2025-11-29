@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.1](https://github.com/sh4dow18/mateory/compare/v0.5.0...v0.5.1) (2025-11-29)
+
+
+### Bug Fixes
+
+* disable form button when form is submitting ([29c68c3](https://github.com/sh4dow18/mateory/commit/29c68c3244af52517a45463dc60c62349017480b))
+* **report-bug:** add await in send email ([54caa4c](https://github.com/sh4dow18/mateory/commit/54caa4cca00f64b5ad2c41c67569ad36fc7314cd))
+* **report-bug:** remove await in send email ([e7f9a90](https://github.com/sh4dow18/mateory/commit/e7f9a900e22ca1f9092a408a0d541e0a3725ae74))
+
 ## [0.5.0](https://github.com/sh4dow18/mateory-fsd/compare/v0.4.0...v0.5.0) (2025-11-27)
 
 

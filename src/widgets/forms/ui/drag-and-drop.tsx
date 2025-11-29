@@ -32,6 +32,7 @@ function DragAndDrop({ label, name, allowedExtensions, maxMegaBytes }: Props) {
   }`;
   const ALLOWED_EXTENSIONS = allowedExtensions.join(", ");
   const HELP_MESSAGE = `Solo ${ALLOWED_EXTENSIONS}. Máximo ${maxMegaBytes} MB`;
+  const MESSAGE_CLASSES = `${messageColorClasses} line-clamp-3`;
   // Returns Drag and Drop Component
   return (
     <Card>
@@ -51,7 +52,7 @@ function DragAndDrop({ label, name, allowedExtensions, maxMegaBytes }: Props) {
         className={DRAG_AND_DROP_CLASSES}
       >
         {/* Drag and Drop Line */}
-        <span className={messageColorClasses}>{message}</span>
+        <span className={MESSAGE_CLASSES}>{message}</span>
         {/* Main Input */}
         <input
           id={name}
