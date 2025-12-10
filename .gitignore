@@ -12,3 +12,6 @@ next-env.d.ts
 .scannerwork
 .sonarqube
 coverage/
+# Storybook
+*storybook.log
+storybook-static
