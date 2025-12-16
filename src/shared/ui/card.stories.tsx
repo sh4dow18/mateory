@@ -12,6 +12,23 @@ const meta: Meta<typeof Card> = {
   parameters: {
     layout: "centered",
   },
+  argTypes: {
+    link: {
+      options: ["None", "External", "Internal"],
+      control: { type: "radio" },
+      mapping: {
+        None: null,
+        External: {
+          href: "https://example.com",
+          newTab: true,
+        },
+        Internal: {
+          href: "/about",
+          newTab: false,
+        },
+      },
+    },
+  },
 };
 export default meta;
 // Card Stories
