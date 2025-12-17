@@ -1,5 +1,5 @@
 // Card Storybook Requirements
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import { LinkType } from "../config/links";
 import Card from "./card";
 // Card Storybook Types
