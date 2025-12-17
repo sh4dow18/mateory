@@ -19,7 +19,7 @@ describe("Card", () => {
     // Mounts component in Fake DOM
     render(<Card link={{ href: "link" }}>Enlace de prueba</Card>);
     // Get Link
-    const LINK = screen.getByText("Enlace de prueba").closest("a");
+    const LINK = screen.getByText("Enlace de prueba").closest("section");
     // Check if the card is a a element that it is the Next.js Link
     expect(LINK).toBeInTheDocument();
     // Check if has link classes

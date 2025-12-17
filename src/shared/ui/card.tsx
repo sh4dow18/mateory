@@ -25,9 +25,8 @@ function Card({ children, link, colored }: Props) {
     <Link
       href={link.href.startsWith("http") ? link.href : `/${link.href}`}
       target={link.newTab ? "_blank" : undefined}
-      className={CLASSES}
     >
-      {children}
+      <section className={CLASSES}>{children}</section>
     </Link>
   ) : (
     <section className={CLASSES}>{children}</section>
